@@ -139,6 +139,10 @@ function grabview {
 # debesys stuff
 alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife'
 
+# vcd stuff
+export INTAD_USER=jerdmann
+export VCD_ORG=TTNET_Infrastructure
+
 # ttnet project dirs
 alias cdspl='cd ~/ttnet/monitoring/splunk'
 alias cdici='cd ~/ttnet/monitoring/icinga'

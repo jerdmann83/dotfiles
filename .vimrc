@@ -18,7 +18,11 @@ set showcmd
 set ignorecase
 set smartcase
 set hlsearch
-set incsearch
+set splitright
+
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
 
 "can't believe this isn't a default
 set hidden
+set nowrap
