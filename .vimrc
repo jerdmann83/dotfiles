@@ -1,6 +1,6 @@
 "appearance stuff
 filetype plugin indent on
-colorscheme slate
+colorscheme mustang
 syntax on
 set title
 
