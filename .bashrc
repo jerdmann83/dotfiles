@@ -73,6 +73,7 @@ alias reboot='sudo reboot'
 alias fixdns='sudo resolvconf -u'
 alias sb='source ~/.bashrc'
 alias eb='vim ~/.bashrc'
+alias gimme='sudo apt-get install'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases

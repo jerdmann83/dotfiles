@@ -29,6 +29,10 @@ set scrolloff=2
 set wildmenu
 set wildmode=longest,list
 
+set number
+
+set mouse=a
+
 set guioptions-=m
 set guioptions-=T
 
@@ -36,4 +40,5 @@ set pastetoggle=<F2>
 
 let mapleader = ","
 nnoremap <leader><space> :noh<cr>
+nnoremap <leader>l :set invrelativenumber<cr>
 nnoremap <leader>n :bnext<cr>
