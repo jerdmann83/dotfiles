@@ -1,6 +1,6 @@
 "appearance stuff
 filetype plugin indent on
-colorscheme mustang
+colorscheme molokai
 syntax on
 set title
 
