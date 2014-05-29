@@ -20,6 +20,7 @@ nnoremap / /\v
 vnoremap / /\v
 
 set splitright
+set cursorline
 set ruler
 set showcmd
 set hidden
