@@ -27,7 +27,7 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set 256 color support
-export TERM=screen-256color
+export TERM=xterm-256color
 
 # add the git stuff
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -161,4 +161,4 @@ function git-sync_()
 alias gits='git-sync_'
 
 # grab stuff from the keys file if present
-test -r .keys && source .keys
+test -r ~/.keys && source ~/.keys
