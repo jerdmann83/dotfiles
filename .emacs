@@ -18,6 +18,13 @@
 (set-face-attribute 'default nil :height 100)
 
 (global-set-key (kbd "<RET>") 'newline-and-indent)
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
+
+(add-hook 'after-init-hook 'my-after-init-hook)
+(defun my-after-init-hook ()
+  (load-theme 'molokai t)
+  )
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
