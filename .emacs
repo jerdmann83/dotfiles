@@ -17,6 +17,8 @@
 (set-frame-font "DejaVu Sans Mono")
 (set-face-attribute 'default nil :height 100)
 
+(global-linum-mode t)
+
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 

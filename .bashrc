@@ -66,7 +66,6 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias emacs='emacs -nw'
 alias vpn='sudo ~/vpn'
 alias poweroff='sudo poweroff'
 alias reboot='sudo reboot'
