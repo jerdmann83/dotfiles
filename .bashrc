@@ -63,6 +63,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more aliases
+alias em='emacsclient -n'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -71,7 +72,7 @@ alias poweroff='sudo poweroff'
 alias reboot='sudo reboot'
 alias fixdns='sudo resolvconf -u'
 alias sb='source ~/.bashrc'
-alias eb='vim ~/.bashrc'
+alias eb='em ~/.bashrc'
 alias gimme='sudo apt-get install'
 
 if [ -f ~/.bash_aliases ]; then
@@ -89,7 +90,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR=vim
+export EDITOR=emacs
 
 # function for grabbing Splunk views
 function grabview {

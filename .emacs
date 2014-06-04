@@ -5,7 +5,9 @@
 (setq-default highlight-tabs t)
 (show-paren-mode t)
 (setq backup-directory-alist '(("." . "~/backups")))
+(setq inhibit-startup-screen 1)
 
+(server-mode 1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq indent-tabs-mode nil)
@@ -22,6 +24,10 @@
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-a") 'beginning-of-line-text)
+(global-set-key (kbd "M-o") 'other-window)
+
+
+
 
 (setq tramp-default-method "ssh")
 
