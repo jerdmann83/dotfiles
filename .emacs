@@ -1,5 +1,6 @@
 (require 'ido)
 (ido-mode t)
+(setq ido-enable-flex-matching 1)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq-default highlight-tabs t)
