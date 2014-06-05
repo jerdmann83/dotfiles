@@ -90,7 +90,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR=emacsclient -n
+export EDITOR="emacsclient -n"
 
 # function for grabbing Splunk views
 function grabview {
