@@ -162,3 +162,11 @@ alias gits='git-sync_'
 
 # grab stuff from the keys file if present
 test -r ~/.keys && source ~/.keys
+
+# capslock is useless
+setxkbmap -option ctrl:nocaps
+
+# set brightness just on my laptop
+if [ $HOSTNAME == chi100787 ]; then
+    xbacklight -set 90
+fi
