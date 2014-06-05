@@ -1,5 +1,5 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# ~/.bashrc: executed by bash(1) for non-login shells#.
+ see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
 # If not running interactively, don't do anything
@@ -90,7 +90,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR=emacs
+export EDITOR=emacsclient -n
 
 # function for grabbing Splunk views
 function grabview {
