@@ -25,10 +25,6 @@
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-a") 'beginning-of-line-text)
-(global-set-key (kbd "M-o") 'other-window)
-
-
-
 
 (setq tramp-default-method "ssh")
 
