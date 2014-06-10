@@ -74,6 +74,7 @@ alias fixdns='sudo resolvconf -u'
 alias sb='source ~/.bashrc'
 alias eb='em ~/.bashrc'
 alias gimme='sudo apt-get install'
+alias vcloud='cd ~/debesys && ./run deploy/chef/scripts/vcloud_server.py'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
