@@ -21,6 +21,9 @@
 (set-face-attribute 'default nil :height 100)
 
 (global-linum-mode t)
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq scroll-step 1) ;; keyboard scroll one line at a time
 
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
@@ -47,3 +50,4 @@
  )
 
 (put 'downcase-region 'disabled nil)
+
