@@ -75,6 +75,7 @@ alias sb='source ~/.bashrc'
 alias eb='em ~/.bashrc'
 alias gimme='sudo apt-get install'
 alias vcloud='cd ~/debesys && ./run deploy/chef/scripts/vcloud_server.py'
+alias ack='ack-grep'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -91,11 +92,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR="emacsclient -n"
+export EDITOR="vim"
 
 # function for grabbing Splunk views
 function grabview {
     scp 119.0.200.55:/opt/splunk/etc/apps/ttnet_operations/local/data/ui/views/$1 ~/ttnet/monitoring/splunk/deployment-apps/ttnet_operations/local/data/ui/views/
+}
+
+# function for grabbing the ttnet ops nav menus in Splunk
+function grabnav {
+    scp 119.0.200.55:/opt/splunk/etc/apps/ttnet_operations/local/data/ui/nav/default.xml ~/ttnet/monitoring/splunk/deployment-apps/ttnet_operations/local/data/ui/nav/
 }
 
 # debesys stuff
@@ -103,7 +109,7 @@ alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-topleve
 
 # vcd stuff
 export INTAD_USER=jerdmann
-export VCD_ORG=TTNET_Infrastructure
+export VCD_ORG=Dev_General
 
 # ttnet project dirs
 alias cdspl='cd ~/ttnet/monitoring/splunk'
