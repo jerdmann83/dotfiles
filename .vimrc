@@ -1,0 +1,45 @@
+"appearance stuff
+filetype plugin indent on
+colorscheme molokai
+syntax on
+set title
+
+"tab stuff
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+"search stuff
+set ignorecase
+set smartcase
+set incsearch
+
+"easier regex handling in searches
+nnoremap / /\v
+vnoremap / /\v
+
+set splitright
+set cursorline
+set ruler
+set showcmd
+set hidden
+set nowrap
+set scrolloff=2
+
+set wildmenu
+set wildmode=longest,list
+
+set number
+
+set mouse=a
+
+set guioptions-=m
+set guioptions-=T
+
+set pastetoggle=<F2>
+
+let mapleader = ","
+nnoremap <leader><space> :noh<cr>
+nnoremap <leader>l :set invrelativenumber<cr>
+nnoremap <leader>n :bnext<cr>
