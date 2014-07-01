@@ -1,8 +1,14 @@
+set nocompatible
+execute pathogen#infect()
+
 "appearance stuff
+syntax on
 filetype plugin indent on
 colorscheme molokai
-syntax on
 set title
+
+"always redraw statusline
+set laststatus=2
 
 "tab stuff
 set expandtab
