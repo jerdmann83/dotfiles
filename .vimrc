@@ -49,3 +49,4 @@ let mapleader = ","
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>l :set invrelativenumber<cr>
 nnoremap <leader>n :bnext<cr>
+nnoremap <leader>p :bprev<cr>
