@@ -67,7 +67,6 @@ alias em='emacsclient -n'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias vpn='sudo ~/vpn'
 alias poweroff='sudo poweroff'
 alias reboot='sudo reboot'
 alias fixdns='sudo resolvconf -u'
@@ -93,6 +92,11 @@ if ! shopt -oq posix; then
 fi
 
 export EDITOR="vim"
+
+# vpn function
+function vpn {
+    ~/.juniper_networks/ncsvc -h us-ttvpn.tradingtechnologies.com -u jerdmann -p $1 -r "TT VPN" -f ~/.juniper_networks/tt.cert
+}
 
 # function for grabbing Splunk views
 function grabview {
