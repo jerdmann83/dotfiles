@@ -104,6 +104,11 @@ function grabnav {
     scp 119.0.200.55:/opt/splunk/etc/apps/ttnet_operations/local/data/ui/nav/default.xml ~/ttnet/monitoring/splunk/deployment-apps/ttnet_operations/local/data/ui/nav/
 }
 
+# function for showing all Icinga hosts that have a service state matching the arg passed
+function geticinga {
+    curl -u jerdmann -k "https://icinga/icinga/cgi-bin/status.cgi?host=all&type=detail&csvoutput" | grep "$1" | cut -f1 -d\; | sed "s/'//g" | sort -u
+}
+
 # debesys stuff
 alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife'
 
