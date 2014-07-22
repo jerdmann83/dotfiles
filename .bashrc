@@ -95,7 +95,7 @@ export EDITOR="vim"
 
 # vpn function
 function vpn {
-    ~/.juniper_networks/ncsvc -h us-ttvpn.tradingtechnologies.com -u jerdmann -p $1 -r "TT VPN" -f ~/.juniper_networks/tt.cert
+    sudo /home/jason/.juniper_networks/ncsvc -h us-ttvpn.tradingtechnologies.com -u jerdmann -p $1 -r "TT VPN" -f /home/jason/.juniper_networks/tt.cert
 }
 
 # function for grabbing Splunk views
