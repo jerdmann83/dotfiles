@@ -91,7 +91,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR="vim"
+export EDITOR="emacs -nw"
 
 # vpn function
 function vpn {
@@ -124,6 +124,7 @@ export VCD_ORG=Dev_General
 alias cdspl='cd ~/ttnet/monitoring/splunk'
 alias cdici='cd ~/ttnet/monitoring/icinga'
 alias cdzab='cd ~/ttnet/monitoring/zabbix/misc_automation'
+alias cdds='cd ~/ttnet/monitoring/scripts/centosDs'
 alias cddeb='cd ~/debesys/deploy/chef/scripts'
 
 function git-sync_()
@@ -183,6 +184,6 @@ test -r ~/.keys && source ~/.keys
 setxkbmap -option ctrl:nocaps
 
 # set brightness just on my laptop
-if [ $HOSTNAME == chi100787 ]; then
+if [ $HOSTNAME == "chi100787" ]; then
     xbacklight -set 90
 fi
