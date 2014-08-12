@@ -5,6 +5,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq-default highlight-tabs t)
 (show-paren-mode t)
+
 (setq backup-directory-alist '(("." . "~/backups")))
 (setq inhibit-startup-screen 1)
 (setq vc-follow-symlinks 1)
@@ -46,7 +47,7 @@
 
 (add-hook 'after-init-hook 'my-after-init-hook)
 (defun my-after-init-hook ()
-  (load-theme 'molokai t)
+  (load-theme 'mustang t)
   )
 
 (custom-set-variables
@@ -54,7 +55,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("0e121ff9bef6937edad8dfcff7d88ac9219b5b4f1570fd1702e546a80dba0832" "8b231ba3e5f61c2bb1bc3a2d84cbd16ea17ca13395653566d4dfbb11feaf8567" "60f04e478dedc16397353fb9f33f0d895ea3dab4f581307fbf0aa2f07e658a40" default))))
+ '(custom-safe-themes (quote ("8fd393097ac6eabfcb172f656d781866beec05f27920a0691e8772aa2cdc7132" "8dd5991bf912b39dc4ae77e2d6aa4882949f4441570222eaf25e07ec38c44d50" "3b819bba57a676edf6e4881bd38c777f96d1aa3b3b5bc21d8266fa5b0d0f1ebf" "769bb56fb9fd7e73459dcdbbfbae1f13e734cdde3cf82f06a067439568cdaa95" "dd43c9f997208c61ce0f4855932cc20a57ae2f37fe2ced218dace5c8c321d1e8" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "53e29ea3d0251198924328fd943d6ead860e9f47af8d22f0b764d11168455a8e" "0e121ff9bef6937edad8dfcff7d88ac9219b5b4f1570fd1702e546a80dba0832" "8b231ba3e5f61c2bb1bc3a2d84cbd16ea17ca13395653566d4dfbb11feaf8567" "60f04e478dedc16397353fb9f33f0d895ea3dab4f581307fbf0aa2f07e658a40" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
