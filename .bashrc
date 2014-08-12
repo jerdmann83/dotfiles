@@ -91,7 +91,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR="emacs -nw"
+export EDITOR="vim"
 
 # vpn function
 function vpn {
