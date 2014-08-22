@@ -75,6 +75,7 @@ alias eb='em ~/.bashrc'
 alias gimme='sudo apt-get install'
 alias vcloud='cd ~/debesys && ./run deploy/chef/scripts/vcloud_server.py'
 alias ack='ack-grep'
+alias eclipse='GTK2_RC_FILES=~/.gtkrc ~/eclipse/eclipse'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -185,5 +186,5 @@ setxkbmap -option ctrl:nocaps
 
 # set brightness just on my laptop
 if [ $HOSTNAME == "chi100787" ]; then
-    xbacklight -set 90
+    xbacklight -set 95
 fi
