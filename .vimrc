@@ -10,12 +10,6 @@ set title
 "always redraw statusline
 set laststatus=2
 
-"tab stuff
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-
 "search stuff
 set ignorecase
 set smartcase
