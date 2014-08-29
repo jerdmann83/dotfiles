@@ -34,12 +34,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 . ~/git-prompt.sh
 . ~/git-completion.sh
 
-# set the prompt a bit different if we're in an ssh session
-if [ -n "$SSH_CLIENT" ]; then
-    PS1='\[\e[1;34m\]\u@\h$(__git_ps1) \w\r\n\[\033[0m\]>'
-else
-    PS1='\[\e[1;32m\]\u@\h\[\e[1;34m\]$(__git_ps1)\[\e[1;32m\] \w\r\n\[\033[0m\]>'
-fi
+PS1='\[\e[1;32m\]\u@\h\[\e[1;34m\]$(__git_ps1)\[\e[1;32m\] \w\r\n\[\033[0m\]>'
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
