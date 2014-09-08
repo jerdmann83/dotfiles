@@ -62,8 +62,6 @@ alias em='emacsclient -n'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias poweroff='sudo poweroff'
-alias reboot='sudo reboot'
 alias fixdns='sudo resolvconf -u'
 alias sb='source ~/.bashrc'
 alias eb='vim ~/.bashrc'
@@ -71,6 +69,8 @@ alias gimme='sudo apt-get install'
 alias vcloud='cd ~/debesys && ./run deploy/chef/scripts/vcloud_server.py'
 alias ack='ack-grep'
 alias eclipse='GTK2_RC_FILES=~/.gtkrc ~/eclipse/eclipse'
+
+alias gst='git status --ignore-submodules'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
