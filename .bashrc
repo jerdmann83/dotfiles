@@ -111,10 +111,13 @@ function geticinga {
 
 # debesys stuff
 alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife'
+alias run='`git rev-parse --show-toplevel`/run'
 
 # vcd stuff
 export INTAD_USER=jerdmann
 export VCD_ORG=Dev_General
+
+export JENKINS_USER='jason.erdmann@tradingtechnologies.com'
 
 # ttnet project dirs
 alias cdspl='cd ~/ttnet/monitoring/splunk'
