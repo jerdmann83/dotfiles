@@ -4,7 +4,7 @@ execute pathogen#infect()
 "appearance stuff
 syntax on
 filetype plugin indent on
-colorscheme jellybeans
+colorscheme badwolf
 set title
 
 "always redraw statusline
