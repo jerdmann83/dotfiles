@@ -4,6 +4,7 @@ execute pathogen#infect()
 "appearance stuff
 syntax on
 filetype plugin indent on
+set t_Co=256
 colorscheme badwolf
 set title
 
