@@ -76,6 +76,14 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.keys ]; then
+    . ~/.keys
+fi
+
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -89,29 +97,10 @@ fi
 
 export EDITOR="vim"
 
-# vpn function
-function vpn {
-    sudo /home/jason/.juniper_networks/ncsvc -h us-ttvpn.tradingtechnologies.com -u jerdmann -p $1 -r "TT VPN" -f /home/jason/.juniper_networks/tt.cert
-}
-
-# function for grabbing Splunk views
-function grabview {
-    scp 119.0.200.55:/opt/splunk/etc/apps/ttnet_operations/local/data/ui/views/$1 ~/ttnet/monitoring/splunk/deployment-apps/ttnet_operations/local/data/ui/views/
-}
-
-# function for grabbing the ttnet ops nav menus in Splunk
-function grabnav {
-    scp 119.0.200.55:/opt/splunk/etc/apps/ttnet_operations/local/data/ui/nav/default.xml ~/ttnet/monitoring/splunk/deployment-apps/ttnet_operations/local/data/ui/nav/
-}
-
-# function for showing all Icinga hosts that have a service state matching the arg passed
-function geticinga {
-    curl -u jerdmann -k "https://icinga/icinga/cgi-bin/status.cgi?host=all&type=detail&csvoutput" | grep "$1" | cut -f1 -d\; | sed "s/'//g" | sort -u
-}
-
 # debesys stuff
 alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife'
 alias run='`git rev-parse --show-toplevel`/run'
+alias gits='git-sync_'
 
 # vcd stuff
 export INTAD_USER=jerdmann
@@ -126,63 +115,11 @@ alias cdzab='cd ~/ttnet/monitoring/zabbix/misc_automation'
 alias cdds='cd ~/ttnet/monitoring/scripts/centosDs'
 alias cddeb='cd ~/debesys/deploy/chef/scripts'
 
-function git-sync_()
-{
-    usage="git-sync branch"
-    if [ -z "$1" ]; then
-        echo $usage
-        return
-    fi
-
-    echo "pushd `git rev-parse --show-toplevel`";
-    pushd `git rev-parse --show-toplevel`;
-    if [ $? != 0 ]; then
-        echo "Aborting."
-        return
-    fi
-    echo "git remote prune origin";
-    git remote prune origin;
-    if [ $? != 0 ]; then
-        echo "Aborting."
-        return
-    fi
-    echo "git checkout $1";
-    git checkout "$1";
-    if [ $? != 0 ]; then
-        echo "Aborting."
-        return
-    fi
-    echo "git pull";
-    git pull;
-    if [ $? != 0 ]; then
-        echo "Aborting."
-        return
-    fi
-    echo "git submodule init";
-    git submodule init;
-    if [ $? != 0 ]; then
-        echo "Aborting."
-        return
-    fi
-    echo "git submodule update";
-    git submodule update;
-    if [ $? != 0 ]; then
-        echo "Aborting."
-        return
-    fi
-    echo "popd";
-    popd;
-}
-
-alias gits='git-sync_'
-
-# grab stuff from the keys file if present
-test -r ~/.keys && source ~/.keys
-
 # capslock is useless
-setxkbmap -option ctrl:nocaps
+setxkbmap -option ctrl:nocaps 2>/dev/null
 
 # set brightness just on my laptop
 if [ $HOSTNAME == "chi100787" ]; then
-    xbacklight -set 95
+    xbacklight -set 85
 fi
+
