@@ -56,7 +56,7 @@ function external()
 
     if [ "on" == "$1" ]; then
         export PRE_EXTERNAL_PS1=$PS1
-	export PS1="\[\033[0;31m\]===EXTERNAL DEBESYS===\n$PRE_EXTERNAL_PS1"
+	export PS1="\[\033[0;31m\]EXTERNAL DEBESYS> $PRE_EXTERNAL_PS1"
         alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife -C ~/.chef/knife.external.rb'
         alias ttknife
         echo
