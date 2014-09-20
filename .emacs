@@ -13,7 +13,11 @@
 (setq inhibit-startup-screen 1)
 (setq vc-follow-symlinks 1)
 
-(server-mode 1)
+(require 'server)
+(if (server-running-p)
+  (message "Server already started")
+  (server-start))
+
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
@@ -30,7 +34,7 @@
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (set-frame-font "DejaVu Sans Mono")
-(set-face-attribute 'default nil :height 100)
+(set-face-attribute 'default nil :height 108)
 
 (global-linum-mode t)
 (setq mouse-wheel-progressive-speed nil)
