@@ -36,7 +36,6 @@
 (set-frame-font "DejaVu Sans Mono")
 (set-face-attribute 'default nil :height 108)
 
-(global-linum-mode t)
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-follow-mouse 't)
 (setq scroll-step 1)
