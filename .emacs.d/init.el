@@ -48,7 +48,7 @@
 
 (add-hook 'after-init-hook 'my-after-init-hook)
 (defun my-after-init-hook ()
-  (load-theme 'monokai t)
+  (load-theme 'deeper-blue t)
   )
 
 (custom-set-variables
@@ -65,4 +65,3 @@
  )
 
 (put 'downcase-region 'disabled nil)
-

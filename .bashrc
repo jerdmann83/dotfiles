@@ -69,8 +69,7 @@ alias gimme='sudo apt-get install'
 alias vcloud='cd ~/debesys && ./run deploy/chef/scripts/vcloud_server.py'
 alias ack='ack-grep'
 alias eclipse='GTK2_RC_FILES=~/.gtkrc ~/eclipse/eclipse'
-
-alias gst='git status --ignore-submodules'
+alias getdotfiles='pushd . && cd ~/.dotfiles && git pull && popd'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
