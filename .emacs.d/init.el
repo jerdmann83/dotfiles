@@ -2,6 +2,7 @@
 (ido-mode t)
 (setq ido-enable-flex-matching 1)
 
+(setq custom-safe-themes t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq-default highlight-tabs t)
 (show-paren-mode t)
@@ -46,19 +47,8 @@
 
 (setq tramp-default-method "ssh")
 
-(add-hook 'after-init-hook (load-theme 'deeper-blue t))
+(add-hook 'after-init-hook (load-theme 'ample t))
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 
 (put 'downcase-region 'disabled nil)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("0e121ff9bef6937edad8dfcff7d88ac9219b5b4f1570fd1702e546a80dba0832" "bd115791a5ac6058164193164fd1245ac9dc97207783eae036f0bfc9ad9670e0" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
