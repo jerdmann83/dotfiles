@@ -47,7 +47,7 @@
 
 (setq tramp-default-method "ssh")
 
-(add-hook 'after-init-hook (load-theme 'ample t))
+(add-hook 'after-init-hook (load-theme 'wombat t))
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 
 (put 'downcase-region 'disabled nil)

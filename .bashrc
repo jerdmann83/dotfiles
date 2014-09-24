@@ -116,9 +116,3 @@ alias cddeb='cd ~/debesys/deploy/chef/scripts'
 
 # capslock is useless
 setxkbmap -option ctrl:nocaps 2>/dev/null
-
-# set brightness just on my laptop
-if [ $HOSTNAME == "chi100787" ]; then
-    xbacklight -set 85
-fi
-
