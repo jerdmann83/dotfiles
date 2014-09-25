@@ -25,3 +25,9 @@
   (save-excursion
     (mark-whole-buffer)
     (copy-region-as-kill (region-beginning) (region-end))))
+
+(defun my/reindent-copy-whole-buffer ()
+  "Reindent and copy the whole buffer to the clipboard."
+  (interactive)
+  (my/reindent-buffer)
+  (my/copy-whole-buffer))

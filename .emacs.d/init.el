@@ -44,7 +44,7 @@
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-a") 'beginning-of-line-text)
-(global-set-key (kbd "C-x C-c") 'my/copy-whole-buffer)
+(global-set-key (kbd "C-c C-c") 'my/reindent-copy-whole-buffer)
 
 (setq tramp-default-method "ssh")
 
