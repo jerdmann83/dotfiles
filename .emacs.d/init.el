@@ -14,6 +14,8 @@
 (setq inhibit-startup-screen 1)
 (setq vc-follow-symlinks 1)
 
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
 (require 'server)
 (if (server-running-p)
   (message "Server already started")
@@ -27,8 +29,6 @@
 
 (require 'saveplace)
 (setq-default save-place t)
-
-(global-set-key (kbd "M-/") 'hippie-expand)
 
 (require 'package)
 (add-to-list 'package-archives
@@ -49,42 +49,49 @@
 (put 'downcase-region 'disabled nil)
 
 ;function definitions
-(defun my/reindent-buffer ()
+(defun my-reindent-buffer ()
   "Reindent entire buffer."
   (interactive)
   (save-excursion
     (mark-whole-buffer)
     (indent-region (region-beginning) (region-end))))
 
-(defun my/replace-string-whole-buffer ()
+(defun my-replace-string-whole-buffer ()
   "Whole buffer version of replace-string."
   (interactive)
   (save-excursion
     (beginning-of-buffer)
     (call-interactively 'replace-string)))
 
-(defun my/replace-regexp-whole-buffer ()
+(defun my-replace-regexp-whole-buffer ()
   "Whole buffer version of replace-regexp."
   (interactive)
   (save-excursion
     (beginning-of-buffer)
     (call-interactively 'replace-regexp)))
 
-(defun my/copy-whole-buffer ()
+(defun my-copy-whole-buffer ()
   "Copy the entire buffer to the clipboard."
   (interactive)
   (save-excursion
     (mark-whole-buffer)
     (copy-region-as-kill (region-beginning) (region-end))))
 
-(defun my/reindent-copy-whole-buffer ()
+(defun my-reindent-copy-whole-buffer ()
   "Reindent and copy the whole buffer to the clipboard."
   (interactive)
-  (my/reindent-buffer)
-  (my/copy-whole-buffer))
+  (my-reindent-buffer)
+  (my-copy-whole-buffer))
+
+(defun my-toggle-ruby-indent ()
+  "Toggle the indent for ruby files."
+  (interactive)
+  (setq ruby-indent-level (if (= ruby-indent-level 2) 4 2)))
 
 ;key bindings
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-a") 'beginning-of-line-text)
-(global-set-key (kbd "C-c C-c") 'my/reindent-copy-whole-buffer)
+(global-set-key (kbd "C-c C-c") 'my-reindent-copy-whole-buffer)
+(global-set-key (kbd "M-/") 'hippie-expand)
+

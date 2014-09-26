@@ -34,16 +34,12 @@ GIT_PS1_SHOWDIRTYSTATE=true
 . ~/git-prompt.sh
 . ~/git-completion.sh
 
-PS1='\[\e[1;32m\]\u@\h\[\e[1;34m\]$(__git_ps1)\[\e[1;32m\] \w\r\n\[\033[0m\]>'
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+# set a simpler prompt for emacs subshells
+if [ -z $EMACS ]; then
+    PS1='\[\e[1;32m\]\u@\h\[\e[1;34m\]$(__git_ps1)\[\e[1;32m\] \w\r\n\[\033[0m\]>'
+else
+    PS1='>'
+fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -58,7 +54,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more aliases
-alias em='emacsclient -n'
+alias em='emacsclient -t'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -94,7 +90,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR="emacs -nw"
+export EDITOR="emacsclient -t"
 
 # debesys stuff
 alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife'
