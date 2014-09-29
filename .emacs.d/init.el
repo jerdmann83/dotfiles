@@ -94,4 +94,6 @@
 (global-set-key (kbd "C-a") 'beginning-of-line-text)
 (global-set-key (kbd "C-c C-c") 'my-reindent-copy-whole-buffer)
 (global-set-key (kbd "M-/") 'hippie-expand)
+(global-set-key (kbd "C-l") 'kill-whole-line)
+
 
