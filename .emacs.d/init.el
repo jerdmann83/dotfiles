@@ -17,6 +17,10 @@
 (ido-mode t)
 (setq ido-enable-flex-matching 1)
 
+(desktop-save-mode 1)
+(setq desktop-save t)
+(setq desktop-dirname "~")
+(linum-mode 1)
 (setq custom-safe-themes t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq-default highlight-tabs t)
@@ -25,10 +29,11 @@
 (setq-default indent-tabs-mode nil)
 (global-auto-revert-mode t)
 
-(setq backup-directory-alist '(("~/backups")))
+(setq auto-save-default nil)
 (setq inhibit-startup-screen 1)
 (setq vc-follow-symlinks 1)
 
+(setq kill-whole-line 1)
 ;shell config
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
@@ -101,10 +106,15 @@
   (interactive)
   (setq ruby-indent-level (if (= ruby-indent-level 2) 4 2)))
 
+(defun my-open-newline ()
+  "Open a newline regardless of current position of point."
+  (interactive)
+  (move-end-of-line nil)
+  (newline-and-indent))
+
 ;key bindings
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-a") 'beginning-of-line-text)
-(global-set-key (kbd "C-c C-c") 'my-reindent-copy-whole-buffer)
-(global-set-key (kbd "M-/") 'hippie-expand)
-(global-set-key (kbd "C-l") 'kill-whole-line)
+(global-set-key (kbd "C-o") 'my-open-newline)
+(global-set-key (kbd "C-c r") 'my-reindent-copy-whole-buffer)
