@@ -5,7 +5,8 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 set t_Co=256
-colorscheme badwolf
+let g:zenburn_high_Contrast=1
+colorscheme zenburn
 set title
 
 "always redraw statusline
@@ -39,6 +40,8 @@ set guioptions-=m
 set guioptions-=T
 
 set pastetoggle=<F2>
+
+imap jk <Esc>
 
 let mapleader = ","
 nnoremap <leader><space> :noh<cr>
