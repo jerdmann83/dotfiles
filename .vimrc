@@ -5,8 +5,9 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 set t_Co=256
-let g:zenburn_high_Contrast=1
-colorscheme zenburn
+"disable background color erase
+set t_ut=
+colorscheme jellybeans
 set title
 
 "always redraw statusline
@@ -17,7 +18,7 @@ set ignorecase
 set smartcase
 set incsearch
 
-"easier regex handling in searches
+"very magic regexes
 nnoremap / /\v
 vnoremap / /\v
 
@@ -48,3 +49,7 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>l :set invrelativenumber<cr>
 nnoremap <leader>n :bnext<cr>
 nnoremap <leader>p :bprev<cr>
+
+nnoremap <C-p> :Unite file_rec/async<cr>
+nnoremap <space>/ :Unite grep:.<cr>
+nnoremap <space>s :Unite -quick-match buffer<cr>

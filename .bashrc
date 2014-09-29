@@ -90,7 +90,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR="vim"
+export EDITOR="emacsclient"
 
 # debesys stuff
 alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife'
@@ -109,6 +109,3 @@ alias cdici='cd ~/ttnet/monitoring/icinga'
 alias cdzab='cd ~/ttnet/monitoring/zabbix/misc_automation'
 alias cdds='cd ~/ttnet/monitoring/scripts/centosDs'
 alias cddeb='cd ~/debesys/deploy/chef/scripts'
-
-# capslock is useless
-setxkbmap -option ctrl:nocaps 2>/dev/null

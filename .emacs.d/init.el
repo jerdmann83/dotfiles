@@ -1,3 +1,18 @@
+;grab any packages we're missing
+;; (require 'package)
+;; (add-to-list 'package-archives
+;;   '("marmalade" . "http://marmalade-repo.org/"))
+
+;; (when (not package-archive-contents)
+;;     (package-refresh-contents))
+
+;; (defvar my-packages '(marmalade auto-complete flycheck inf-ruby
+;;                                 paredit sublime-themes))
+;; (dolist (p my-packages)
+;;     (when (not (package-installed-p p))
+;;           (package-install p)))
+
+;start main config
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching 1)
@@ -16,13 +31,11 @@
 
 ;shell config
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-(define-key shell-mode-map (kbd "<up>") 'comint-previous-input)
-(define-key shell-mode-map (kbd "<down>") 'comint-next-input)
 
-(require 'server)
-(if (server-running-p)
-  (message "Server already started")
-  (server-start))
+;; (require 'server)
+;; (if (server-running-p)
+;;   (message "Server already started")
+;;   (server-start))
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -32,10 +45,6 @@
 
 (require 'saveplace)
 (setq-default save-place t)
-
-(require 'package)
-(add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (set-frame-font "DejaVu Sans Mono")
 (set-face-attribute 'default nil :height 108)
