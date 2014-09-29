@@ -14,7 +14,10 @@
 (setq inhibit-startup-screen 1)
 (setq vc-follow-symlinks 1)
 
+;shell config
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(define-key shell-mode-map (kbd "<up>") 'comint-previous-input)
+(define-key shell-mode-map (kbd "<down>") 'comint-next-input)
 
 (require 'server)
 (if (server-running-p)
@@ -45,6 +48,7 @@
 
 (add-hook 'after-init-hook (load-theme 'wombat t))
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (put 'downcase-region 'disabled nil)
 
@@ -95,5 +99,3 @@
 (global-set-key (kbd "C-c C-c") 'my-reindent-copy-whole-buffer)
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-l") 'kill-whole-line)
-
-
