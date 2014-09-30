@@ -17,9 +17,9 @@
 (ido-mode t)
 (setq ido-enable-flex-matching 1)
 
-(desktop-save-mode 1)
-(setq desktop-save t)
-(setq desktop-dirname "~")
+;; (desktop-save-mode nil)
+;; (setq desktop-save t)
+;; (setq desktop-dirname "~")
 (linum-mode 1)
 (setq custom-safe-themes t)
 (fset 'yes-or-no-p 'y-or-n-p)

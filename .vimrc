@@ -7,7 +7,7 @@ filetype plugin indent on
 set t_Co=256
 "disable background color erase
 set t_ut=
-colorscheme jellybeans
+colorscheme badwolf
 set title
 
 "always redraw statusline
@@ -17,6 +17,9 @@ set laststatus=2
 set ignorecase
 set smartcase
 set incsearch
+
+"path stuff
+set autochdir
 
 "very magic regexes
 nnoremap / /\v
@@ -47,9 +50,3 @@ imap jk <Esc>
 let mapleader = ","
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>l :set invrelativenumber<cr>
-nnoremap <leader>n :bnext<cr>
-nnoremap <leader>p :bprev<cr>
-
-nnoremap <C-p> :Unite file_rec/async<cr>
-nnoremap <space>/ :Unite grep:.<cr>
-nnoremap <space>s :Unite -quick-match buffer<cr>
