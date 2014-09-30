@@ -1,18 +1,20 @@
-;grab any packages we're missing
-;; (require 'package)
-;; (add-to-list 'package-archives
-;;   '("marmalade" . "http://marmalade-repo.org/"))
+;set up repos
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
 
 ;; (when (not package-archive-contents)
 ;;     (package-refresh-contents))
 
 ;; (defvar my-packages '(marmalade auto-complete flycheck inf-ruby
-;;                                 paredit sublime-themes))
+;;                                 paredit sublime-themes assemblage-theme))
 ;; (dolist (p my-packages)
 ;;     (when (not (package-installed-p p))
 ;;           (package-install p)))
 
-;start main config
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching 1)
@@ -20,6 +22,7 @@
 ;; (desktop-save-mode nil)
 ;; (setq desktop-save t)
 ;; (setq desktop-dirname "~")
+
 (linum-mode 1)
 (setq custom-safe-themes t)
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -60,7 +63,7 @@
 
 (setq tramp-default-method "ssh")
 
-(add-hook 'after-init-hook (load-theme 'wombat t))
+(add-hook 'after-init-hook (load-theme 'assemblage t))
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -115,6 +118,5 @@
 ;key bindings
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
-(global-set-key (kbd "C-a") 'beginning-of-line-text)
 (global-set-key (kbd "C-o") 'my-open-newline)
 (global-set-key (kbd "C-c r") 'my-reindent-copy-whole-buffer)

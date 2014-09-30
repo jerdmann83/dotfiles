@@ -1,6 +1,11 @@
 set nocompatible
 execute pathogen#infect()
 
+set noswapfile
+set clipboard+=unnamed
+set go+=a
+set autoread
+
 "appearance stuff
 syntax on
 filetype plugin indent on
@@ -35,6 +40,7 @@ set scrolloff=2
 
 set wildmenu
 set wildmode=longest,list
+set wildignore=*.swp,*.pyc
 
 set number
 
