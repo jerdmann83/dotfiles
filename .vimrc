@@ -10,9 +10,8 @@ set autoread
 syntax on
 filetype plugin indent on
 set t_Co=256
-"disable background color erase
 set t_ut=
-colorscheme badwolf
+colorscheme Tomorrow-Night
 set title
 
 "always redraw statusline
