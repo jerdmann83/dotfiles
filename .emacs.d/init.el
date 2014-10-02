@@ -10,7 +10,7 @@
 ;;     (package-refresh-contents))
 
 ;; (defvar my-packages '(marmalade auto-complete flycheck inf-ruby
-;;                                 paredit sublime-themes assemblage-theme))
+;;                                 paredit sublime-themes darkburn-theme))
 ;; (dolist (p my-packages)
 ;;     (when (not (package-installed-p p))
 ;;           (package-install p)))
@@ -63,8 +63,7 @@
 
 (setq tramp-default-method "ssh")
 
-(add-hook 'after-init-hook (load-theme 'assemblage t))
-(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+(add-hook 'after-init-hook (load-theme 'darkburn t))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (put 'downcase-region 'disabled nil)
