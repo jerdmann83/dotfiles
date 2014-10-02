@@ -1,5 +1,16 @@
 set nocompatible
-execute pathogen#infect()
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+call vundle#end()
+filetype plugin indent on
 
 set noswapfile
 set clipboard+=unnamed
@@ -13,7 +24,6 @@ set t_Co=256
 set t_ut=
 colorscheme Tomorrow-Night
 set title
-
 "always redraw statusline
 set laststatus=2
 
@@ -55,3 +65,11 @@ imap jk <Esc>
 let mapleader = ","
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>l :set invrelativenumber<cr>
+nnoremap <leader>n :bnext<cr>
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-l> <C-w>l
+nnoremap gn :bn<cr>
+nnoremap gp :bp<cr>
+nnoremap gd :bd<cr>  
