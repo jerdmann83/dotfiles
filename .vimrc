@@ -3,6 +3,7 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'kien/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
@@ -10,6 +11,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'vim-scripts/BufClose.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -73,4 +75,4 @@ nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-l> <C-w>l
 nnoremap gn :bn<cr>
 nnoremap gp :bp<cr>
-nnoremap gd :bd<cr>  
+nnoremap <silent> gd :BufClose<cr>  
