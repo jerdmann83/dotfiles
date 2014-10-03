@@ -63,16 +63,21 @@ set guioptions-=T
 
 set pastetoggle=<F2>
 
+map <F3> :NERDTreeToggle<CR>
 imap jk <Esc>
 
 let mapleader = ","
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>l :set invrelativenumber<cr>
 nnoremap <leader>n :bnext<cr>
+
 nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-j> <C-w>j
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-l> <C-w>l
+
+nnoremap J }
+nnoremap K {
 nnoremap gn :bn<cr>
 nnoremap gp :bp<cr>
 nnoremap <silent> gd :BufClose<cr>  
