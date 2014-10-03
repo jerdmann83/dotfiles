@@ -61,6 +61,7 @@ set guioptions-=T
 
 set pastetoggle=<F2>
 
+map <F3> :NERDTreeToggle<CR>
 imap jk <Esc>
 
 let mapleader = ","
