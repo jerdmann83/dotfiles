@@ -66,6 +66,7 @@ alias vcloud='cd ~/debesys && ./run deploy/chef/scripts/vcloud_server.py'
 alias ack='ack-grep'
 alias eclipse='GTK2_RC_FILES=~/.gtkrc ~/eclipse/eclipse'
 alias getdotfiles='pushd . && cd ~/.dotfiles && git pull && popd'
+alias retroterm='~/cool-retro-term/cool-retro-term'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases

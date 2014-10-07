@@ -67,9 +67,9 @@ map <F3> :NERDTreeToggle<CR>
 imap jk <Esc>
 
 let mapleader = ","
-nnoremap <leader><space> :noh<cr>
 nnoremap <leader>l :set invrelativenumber<cr>
 nnoremap <leader>n :bnext<cr>
+nnoremap <leader>w :w<cr>
 
 nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-j> <C-w>j
