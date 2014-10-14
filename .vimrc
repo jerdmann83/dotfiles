@@ -81,6 +81,8 @@ nnoremap <silent> <C-l> <C-w>l
 
 nnoremap J }
 nnoremap K {
+vnoremap J }
+vnoremap K {
 nnoremap gn :bn<cr>
 nnoremap gp :bp<cr>
 nnoremap <silent> gd :BufClose<cr>  
