@@ -12,6 +12,7 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/BufClose.vim'
+Plugin 'msanders/snipmate.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -83,3 +84,4 @@ nnoremap K {
 nnoremap gn :bn<cr>
 nnoremap gp :bp<cr>
 nnoremap <silent> gd :BufClose<cr>  
+nnoremap Q <nop>
