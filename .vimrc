@@ -15,6 +15,8 @@ Plugin 'vim-scripts/BufClose.vim'
 call vundle#end()
 filetype plugin indent on
 
+let g:syntastic_python_checkers = ['pyflakes']
+
 set noswapfile
 set clipboard+=unnamed
 set go+=a
