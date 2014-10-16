@@ -1,6 +1,5 @@
 set nocompatible
 filetype off
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'kien/ctrlp.vim'
@@ -9,6 +8,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/BufClose.vim'
@@ -18,9 +18,11 @@ filetype plugin indent on
 
 let g:syntastic_python_checkers = ['pyflakes']
 
+set history=1000
 set noswapfile
-set clipboard+=unnamed
+set clipboard=unnamed
 set go+=a
+set shortmess=atI
 set autoread
 
 "appearance stuff
@@ -37,6 +39,7 @@ set laststatus=2
 set ignorecase
 set smartcase
 set incsearch
+set hlsearch
 
 "path stuff
 set autochdir
@@ -44,6 +47,9 @@ set autochdir
 "very magic regexes
 nnoremap / /\v
 vnoremap / /\v
+
+"who has time to hold shift
+nnoremap ; :
 
 set splitright
 set cursorline
@@ -61,18 +67,36 @@ set number
 
 set mouse=a
 
+" easier jump to exact mark position
+nnoremap ' `
+nnoremap ` '
+
 set guioptions-=m
 set guioptions-=T
 
 set pastetoggle=<F2>
-
 map <F3> :NERDTreeToggle<CR>
 imap jk <Esc>
+
+" bash-like commandline keys
+cnoremap <C-A>		<Home>
+cnoremap <C-E>		<End>
+cnoremap <C-K>		<C-U>
 
 let mapleader = ","
 nnoremap <leader>l :set invrelativenumber<cr>
 nnoremap <leader>n :bnext<cr>
 nnoremap <leader>w :w<cr>
+nnoremap <leader><space> :noh<cr>
+nnoremap <leader>bd :BufClose<cr>  
+
+"fugitive stuff
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gl :Glog<CR>
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gp :Ggrep 
+nnoremap <Leader>gR :Gread<CR>
+nnoremap <Leader>gd :Gdiff<CR>
 
 nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-j> <C-w>j
@@ -83,7 +107,4 @@ nnoremap J }
 nnoremap K {
 vnoremap J }
 vnoremap K {
-nnoremap gn :bn<cr>
-nnoremap gp :bp<cr>
-nnoremap <silent> gd :BufClose<cr>  
 nnoremap Q <nop>
