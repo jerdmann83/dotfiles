@@ -44,10 +44,6 @@ set hlsearch
 "path stuff
 set autochdir
 
-"very magic regexes
-nnoremap / /\v
-vnoremap / /\v
-
 "who has time to hold shift
 nnoremap ; :
 
