@@ -30,7 +30,7 @@ syntax on
 filetype plugin indent on
 set t_Co=256
 set t_ut=
-colorscheme Tomorrow-Night
+colorscheme lucius
 set title
 "always redraw statusline
 set laststatus=2
@@ -52,7 +52,6 @@ set cursorline
 set ruler
 set showcmd
 set hidden
-set nowrap
 set scrolloff=2
 
 set wildmenu

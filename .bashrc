@@ -63,6 +63,8 @@ alias sb='source ~/.bashrc'
 alias eb='vim ~/.bashrc'
 alias gimme='sudo apt-get install'
 alias vcloud='cd ~/debesys && ./run deploy/chef/scripts/vcloud_server.py'
+alias bump='~/debesys/run python ~/debesys/deploy/chef/scripts/bump_cookbook_version.py'
+alias deploy='~/debesys/run python ~/debesys/deploy/chef/scripts/request_deploy.py'
 alias ack='ack-grep'
 alias eclipse='GTK2_RC_FILES=~/.gtkrc ~/eclipse/eclipse'
 alias getdotfiles='pushd . && cd ~/.dotfiles && git pull && popd'
@@ -102,6 +104,7 @@ alias gits='git-sync_'
 export INTAD_USER=jerdmann
 export VCD_ORG=Dev_General
 
+export AWS_DEFAULT_REGION='us-east-1'
 export JENKINS_USER='jason.erdmann@tradingtechnologies.com'
 
 # ttnet project dirs
