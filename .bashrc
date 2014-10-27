@@ -35,11 +35,11 @@ GIT_PS1_SHOWDIRTYSTATE=true
 . ~/git-completion.sh
 
 # set a simpler prompt for emacs subshells
-if [ -z $EMACS ]; then
-    PS1='\[\e[1;32m\]\u@\h\[\e[1;34m\]$(__git_ps1)\[\e[1;32m\] \w\r\n\[\033[0m\]>'
-else
-    PS1='>'
-fi
+# if [ -z $EMACS ]; then
+     PS1='\[\e[1;32m\]\u@\h\[\e[1;34m\]$(__git_ps1)\[\e[1;32m\] \w\r\n\[\033[0m\]>'
+# else
+#     PS1='>'
+# fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

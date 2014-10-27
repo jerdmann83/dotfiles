@@ -3,17 +3,19 @@
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "http://milkbox.org/packages/") t)
 (package-initialize)
 
-;; (when (not package-archive-contents)
-;;     (package-refresh-contents))
+(when (not package-archive-contents)
+    (package-refresh-contents))
 
-;; (defvar my-packages '(marmalade auto-complete flycheck inf-ruby
-;;                                 paredit sublime-themes))
-;; (dolist (p my-packages)
-;;     (when (not (package-installed-p p))
-;;           (package-install p)))
+(defvar my-packages '(marmalade auto-complete flycheck inf-ruby
+                                paredit sublime-themes
+                                color-theme-molokai
+                                color-theme-monokai))
+(dolist (p my-packages)
+    (when (not (package-installed-p p))
+          (package-install p)))
 
 (require 'ido)
 (ido-mode t)
@@ -63,7 +65,7 @@
 
 (setq tramp-default-method "ssh")
 
-;(add-hook 'after-init-hook (load-theme 'molokai t))
+(add-hook 'after-init-hook (load-theme 'wombat t))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (put 'downcase-region 'disabled nil)
