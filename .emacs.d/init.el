@@ -9,10 +9,8 @@
 (when (not package-archive-contents)
     (package-refresh-contents))
 
-(defvar my-packages '(marmalade auto-complete flycheck inf-ruby
-                                paredit sublime-themes
-                                color-theme-molokai
-                                color-theme-monokai))
+(defvar my-packages '(auto-complete flycheck inf-ruby nlinum paredit))
+
 (dolist (p my-packages)
     (when (not (package-installed-p p))
           (package-install p)))

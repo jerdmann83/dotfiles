@@ -74,9 +74,9 @@ map <F3> :NERDTreeToggle<CR>
 imap jk <Esc>
 
 " bash-like commandline keys
-cnoremap <C-A>		<Home>
-cnoremap <C-E>		<End>
-cnoremap <C-K>		<C-U>
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+cnoremap <C-K> <C-U>
 
 let mapleader = ","
 nnoremap <leader>l :set invrelativenumber<cr>
@@ -98,8 +98,4 @@ nnoremap <silent> <C-j> <C-w>j
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-l> <C-w>l
 
-nnoremap J }
-nnoremap K {
-vnoremap J }
-vnoremap K {
 nnoremap Q <nop>
