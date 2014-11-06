@@ -9,7 +9,8 @@
 (when (not package-archive-contents)
     (package-refresh-contents))
 
-(defvar my-packages '(auto-complete flycheck inf-ruby nlinum paredit))
+(defvar my-packages '(auto-complete buffer-move flycheck
+                                    paredit visual-regexp))
 
 (dolist (p my-packages)
     (when (not (package-installed-p p))
@@ -18,6 +19,8 @@
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching 1)
+
+(electric-pair-mode)
 
 ;; (desktop-save-mode nil)
 ;; (setq desktop-save t)
@@ -33,6 +36,8 @@
 (global-auto-revert-mode t)
 
 (setq auto-save-default nil)
+(setq make-backup-files nil)
+(setq backup-inhibited t)
 (setq inhibit-startup-screen 1)
 (setq vc-follow-symlinks 1)
 
@@ -54,6 +59,8 @@
 (require 'saveplace)
 (setq-default save-place t)
 
+(global-linum-mode 1)
+
 (set-frame-font "DejaVu Sans Mono")
 (set-face-attribute 'default nil :height 108)
 
@@ -63,7 +70,7 @@
 
 (setq tramp-default-method "ssh")
 
-(add-hook 'after-init-hook (load-theme 'wombat t))
+(add-hook 'after-init-hook (load-theme 'tango-dark t))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (put 'downcase-region 'disabled nil)
@@ -117,5 +124,6 @@
 ;key bindings
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
+(global-set-key (kbd "C-a") 'beginning-of-line-text)
 (global-set-key (kbd "C-o") 'my-open-newline)
 (global-set-key (kbd "C-c r") 'my-reindent-copy-whole-buffer)
