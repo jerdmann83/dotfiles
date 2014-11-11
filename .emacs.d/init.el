@@ -9,8 +9,7 @@
 (when (not package-archive-contents)
     (package-refresh-contents))
 
-(defvar my-packages '(auto-complete buffer-move flycheck
-                                    paredit visual-regexp))
+(defvar my-packages '(auto-complete flycheck paredit visual-regexp))
 
 (dolist (p my-packages)
     (when (not (package-installed-p p))
@@ -22,11 +21,6 @@
 
 (electric-pair-mode)
 
-;; (desktop-save-mode nil)
-;; (setq desktop-save t)
-;; (setq desktop-dirname "~")
-
-(linum-mode 1)
 (setq custom-safe-themes t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq-default highlight-tabs t)
@@ -42,13 +36,8 @@
 (setq vc-follow-symlinks 1)
 
 (setq kill-whole-line 1)
-;shell config
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-;; (require 'server)
-;; (if (server-running-p)
-;;   (message "Server already started")
-;;   (server-start))
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -58,8 +47,6 @@
 
 (require 'saveplace)
 (setq-default save-place t)
-
-(global-linum-mode 1)
 
 (set-frame-font "DejaVu Sans Mono")
 (set-face-attribute 'default nil :height 108)
@@ -124,6 +111,4 @@
 ;key bindings
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
-(global-set-key (kbd "C-a") 'beginning-of-line-text)
 (global-set-key (kbd "C-o") 'my-open-newline)
-(global-set-key (kbd "C-c r") 'my-reindent-copy-whole-buffer)
