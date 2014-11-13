@@ -9,7 +9,7 @@
 (when (not package-archive-contents)
     (package-refresh-contents))
 
-(defvar my-packages '(auto-complete flycheck paredit visual-regexp))
+(defvar my-packages '(auto-complete flycheck flycheck-pyflakes paredit))
 
 (dolist (p my-packages)
     (when (not (package-installed-p p))
@@ -29,18 +29,21 @@
 (setq-default indent-tabs-mode nil)
 (global-auto-revert-mode t)
 
+(load-theme 'tango-dark)
 (setq auto-save-default nil)
 (setq make-backup-files nil)
 (setq backup-inhibited t)
 (setq inhibit-startup-screen 1)
 (setq vc-follow-symlinks 1)
-
 (setq kill-whole-line 1)
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+
+(setq flycheck-disabled-checkers '(python-pylint))
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
@@ -57,7 +60,6 @@
 
 (setq tramp-default-method "ssh")
 
-(add-hook 'after-init-hook (load-theme 'tango-dark t))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (put 'downcase-region 'disabled nil)
