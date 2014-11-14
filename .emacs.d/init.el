@@ -15,10 +15,6 @@
     (when (not (package-installed-p p))
           (package-install p)))
 
-(require 'ido)
-(ido-mode t)
-(setq ido-enable-flex-matching 1)
-
 (electric-pair-mode)
 
 (setq custom-safe-themes t)
@@ -36,20 +32,30 @@
 (setq inhibit-startup-screen 1)
 (setq vc-follow-symlinks 1)
 (setq kill-whole-line 1)
+(setq require-final-newline t)
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-(setq flycheck-disabled-checkers '(python-pylint))
-(add-hook 'after-init-hook #'global-flycheck-mode)
+(server-start)
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
 (require 'saveplace)
 (setq-default save-place t)
+
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-flex-matching 1)
+
+(require 'auto-complete)
+(global-auto-complete-mode t)
+
+(require 'flycheck)
+(global-flycheck-mode t)
 
 (set-frame-font "DejaVu Sans Mono")
 (set-face-attribute 'default nil :height 108)
