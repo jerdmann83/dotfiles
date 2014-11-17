@@ -9,7 +9,7 @@
 (when (not package-archive-contents)
     (package-refresh-contents))
 
-(defvar my-packages '(auto-complete flycheck flycheck-pyflakes paredit))
+(defvar my-packages '(flycheck flycheck-pyflakes paredit))
 
 (dolist (p my-packages)
     (when (not (package-installed-p p))
@@ -39,7 +39,11 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-(server-start)
+(require 'server)
+(if (server-running-p)
+    (message "Server is already running.")
+  (server-start)
+)
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
@@ -50,9 +54,6 @@
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching 1)
-
-(require 'auto-complete)
-(global-auto-complete-mode t)
 
 (require 'flycheck)
 (global-flycheck-mode t)

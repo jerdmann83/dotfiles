@@ -34,12 +34,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 . ~/git-prompt.sh
 . ~/git-completion.sh
 
-# set a simpler prompt for emacs subshells
-# if [ -z $EMACS ]; then
-     PS1='\[\e[1;32m\]\u@\h\[\e[1;34m\]$(__git_ps1)\[\e[1;32m\] \w\r\n\[\033[0m\]>'
-# else
-#     PS1='>'
-# fi
+PS1='\[\e[1;32m\]\u@\h\[\e[1;34m\]$(__git_ps1)\[\e[1;32m\] \w\r\n\[\033[0m\]>'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -54,7 +49,8 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more aliases
-alias emacs='emacs -nw'
+alias em='emacs -nw'
+alias ee='emacsclient -nw'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
