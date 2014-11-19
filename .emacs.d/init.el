@@ -9,7 +9,7 @@
 (when (not package-archive-contents)
     (package-refresh-contents))
 
-(defvar my-packages '(flycheck flycheck-pyflakes paredit))
+(defvar my-packages '(auto-complete flycheck pyflakes paredit))
 
 (dolist (p my-packages)
     (when (not (package-installed-p p))
