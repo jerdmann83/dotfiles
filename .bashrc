@@ -63,7 +63,7 @@ alias bump='~/debesys-scripts/run python ~/debesys-scripts/deploy/chef/scripts/b
 alias deploy='~/debesys-scripts/run python ~/debesys-scripts/deploy/chef/scripts/request_deploy.py'
 alias ack='ack-grep'
 alias eclipse='GTK2_RC_FILES=~/.gtkrc ~/eclipse/eclipse'
-alias getdotfiles='pushd . && cd ~/.dotfiles && git pull && popd'
+alias dot='cd ~/.dotfiles'
 alias retroterm='~/cool-retro-term/cool-retro-term'
 
 if [ -f ~/.bash_aliases ]; then
@@ -108,6 +108,8 @@ alias cdspl='cd ~/ttnet/monitoring/splunk'
 alias cdici='cd ~/ttnet/monitoring/icinga'
 alias cdzab='cd ~/ttnet/monitoring/zabbix/misc_automation'
 alias cdds='cd ~/ttnet/monitoring/scripts/centosDs'
+alias deb='cd ~/debesys'
+alias dev='cd ~/dev-root'
 
 # capslock is useless
 setxkbmap -option ctrl:nocaps 2>/dev/null
