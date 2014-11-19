@@ -9,15 +9,11 @@
 (when (not package-archive-contents)
     (package-refresh-contents))
 
-(defvar my-packages '(auto-complete flycheck pyflakes paredit))
+(defvar my-packages '(flycheck flycheck-pyflakes paredit))
 
 (dolist (p my-packages)
     (when (not (package-installed-p p))
           (package-install p)))
-
-(require 'ido)
-(ido-mode t)
-(setq ido-enable-flex-matching 1)
 
 (electric-pair-mode)
 
@@ -36,6 +32,7 @@
 (setq inhibit-startup-screen 1)
 (setq vc-follow-symlinks 1)
 (setq kill-whole-line 1)
+(setq require-final-newline t)
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
@@ -46,11 +43,24 @@
 (setq flycheck-flake8rc "~/.config/flake8")
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
+(require 'server)
+(if (server-running-p)
+    (message "Server is already running.")
+  (server-start)
+)
+
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
 (require 'saveplace)
 (setq-default save-place t)
+
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-flex-matching 1)
+
+(require 'flycheck)
+(global-flycheck-mode t)
 
 (set-frame-font "DejaVu Sans Mono")
 (set-face-attribute 'default nil :height 108)

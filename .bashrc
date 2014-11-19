@@ -34,12 +34,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 . ~/git-prompt.sh
 . ~/git-completion.sh
 
-# set a simpler prompt for emacs subshells
-# if [ -z $EMACS ]; then
-     PS1='\[\e[1;32m\]\u@\h\[\e[1;34m\]$(__git_ps1)\[\e[1;32m\] \w\r\n\[\033[0m\]>'
-# else
-#     PS1='>'
-# fi
+PS1='\[\e[1;32m\]\u@\h\[\e[1;34m\]$(__git_ps1)\[\e[1;32m\] \w\r\n\[\033[0m\]>'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -54,7 +49,8 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more aliases
-alias emacs='emacs -nw'
+alias em='emacs -nw'
+alias ee='emacsclient -nw'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -67,7 +63,7 @@ alias bump='~/debesys-scripts/run python ~/debesys-scripts/deploy/chef/scripts/b
 alias deploy='~/debesys-scripts/run python ~/debesys-scripts/deploy/chef/scripts/request_deploy.py'
 alias ack='ack-grep'
 alias eclipse='GTK2_RC_FILES=~/.gtkrc ~/eclipse/eclipse'
-alias getdotfiles='pushd . && cd ~/.dotfiles && git pull && popd'
+alias dot='cd ~/.dotfiles'
 alias retroterm='~/cool-retro-term/cool-retro-term'
 
 if [ -f ~/.bash_aliases ]; then
@@ -93,7 +89,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR="emacs -nw"
+export EDITOR="emacsclient -nw"
 
 # debesys stuff
 alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife'
@@ -112,6 +108,8 @@ alias cdspl='cd ~/ttnet/monitoring/splunk'
 alias cdici='cd ~/ttnet/monitoring/icinga'
 alias cdzab='cd ~/ttnet/monitoring/zabbix/misc_automation'
 alias cdds='cd ~/ttnet/monitoring/scripts/centosDs'
+alias deb='cd ~/debesys'
+alias dev='cd ~/dev-root'
 
 # capslock is useless
 setxkbmap -option ctrl:nocaps 2>/dev/null
