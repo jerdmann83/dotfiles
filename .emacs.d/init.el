@@ -15,8 +15,6 @@
     (when (not (package-installed-p p))
           (package-install p)))
 
-(electric-pair-mode)
-
 (setq custom-safe-themes t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq-default highlight-tabs t)

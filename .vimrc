@@ -4,14 +4,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'kien/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'vim-scripts/BufClose.vim'
 Plugin 'msanders/snipmate.vim'
 call vundle#end()
 filetype plugin indent on
@@ -30,7 +28,7 @@ syntax on
 filetype plugin indent on
 set t_Co=256
 set t_ut=
-colorscheme lucius
+colorscheme badwolf
 set title
 "always redraw statusline
 set laststatus=2
@@ -80,18 +78,12 @@ cnoremap <C-K> <C-U>
 
 let mapleader = ","
 nnoremap <leader>l :set invrelativenumber<cr>
-nnoremap <leader>n :bnext<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader><space> :noh<cr>
-nnoremap <leader>bd :BufClose<cr>  
 
-"fugitive stuff
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gl :Glog<CR>
-nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gp :Ggrep 
-nnoremap <Leader>gR :Gread<CR>
-nnoremap <Leader>gd :Gdiff<CR>
+nnoremap gj :bn<CR>
+nnoremap gk :bp<CR>
+nnoremap gd :bd<CR>
 
 nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-j> <C-w>j
