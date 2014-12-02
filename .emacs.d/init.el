@@ -9,7 +9,7 @@
 (when (not package-archive-contents)
     (package-refresh-contents))
 
-(defvar my-packages '(flycheck flycheck-pyflakes paredit))
+(defvar my-packages '(auto-complete flycheck pyflakes paredit))
 
 (dolist (p my-packages)
     (when (not (package-installed-p p))
@@ -36,6 +36,10 @@
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+
+(setq flycheck-disabled-checkers '(python-pylint))
+(setq flycheck-flake8rc "~/.config/flake8")
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 (require 'server)
 (if (server-running-p)
