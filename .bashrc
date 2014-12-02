@@ -110,6 +110,7 @@ alias cdzab='cd ~/ttnet/monitoring/zabbix/misc_automation'
 alias cdds='cd ~/ttnet/monitoring/scripts/centosDs'
 alias deb='cd ~/debesys'
 alias dev='cd ~/dev-root'
+alias cb='cd ~/debesys/deploy/chef/cookbooks'
 
 # capslock is useless
 setxkbmap -option ctrl:nocaps 2>/dev/null

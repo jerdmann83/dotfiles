@@ -30,6 +30,7 @@ set t_Co=256
 set t_ut=
 colorscheme badwolf
 set title
+set ttyfast
 "always redraw statusline
 set laststatus=2
 
@@ -41,9 +42,6 @@ set hlsearch
 
 "path stuff
 set autochdir
-
-"who has time to hold shift
-nnoremap ; :
 
 set splitright
 set cursorline
