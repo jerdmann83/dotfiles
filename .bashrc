@@ -29,12 +29,26 @@ shopt -s checkwinsize
 # set 256 color support
 export TERM=xterm-256color
 
-# add the git stuff
-GIT_PS1_SHOWDIRTYSTATE=true
-. ~/git-prompt.sh
-. ~/git-completion.sh
-
-PS1='\[\e[1;32m\]\u@\h\[\e[1;34m\]$(__git_ps1)\[\e[1;32m\] \w\r\n\[\033[0m\]>'
+# set prompt
+blue="\[\e[1;34m\]"
+green="\[\e[1;32m\]"
+red="\[\e[1;31m\]"
+reset="\[\e[0m\]"
+PROMPT_COMMAND=_prompt_command
+function _prompt_command()
+{
+	local rc="$?"
+	PS1=""
+	if [ $rc != 0 ]; then
+		PS1+="$red[$rc]$reset"
+	fi
+	PS1+="$green\u@\h"
+	$(git branch >/dev/null 2>&1)
+	if [ $? == 0 ]; then
+		PS1+=" $blue(\$(git branch 2>/dev/null | grep '^*' | cut -f2 -d' '))"
+	fi
+	PS1+="$green \w$reset\r\n>"
+}
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
