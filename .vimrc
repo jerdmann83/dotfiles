@@ -1,17 +1,6 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'kien/ctrlp.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'tpope/vim-surround'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'msanders/snipmate.vim'
-call vundle#end()
+execute pathogen#infect()
 filetype plugin indent on
 
 let g:syntastic_python_checkers = ['pyflakes']
@@ -81,7 +70,6 @@ nnoremap <leader><space> :noh<cr>
 
 nnoremap gj :bn<CR>
 nnoremap gk :bp<CR>
-nnoremap gd :bd<CR>
 
 nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-j> <C-w>j
