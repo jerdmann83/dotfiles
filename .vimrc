@@ -4,6 +4,7 @@ execute pathogen#infect()
 filetype plugin indent on
 
 let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_enable_perl_checker = 1
 
 set history=1000
 set noswapfile
