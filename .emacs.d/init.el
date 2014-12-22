@@ -31,6 +31,7 @@
 (setq vc-follow-symlinks 1)
 (setq kill-whole-line 1)
 (setq require-final-newline t)
+(xterm-mouse-mode 1)
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
