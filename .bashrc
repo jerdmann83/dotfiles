@@ -79,6 +79,7 @@ alias ack='ack-grep'
 alias eclipse='GTK2_RC_FILES=~/.gtkrc ~/eclipse/eclipse'
 alias dot='cd ~/.dotfiles'
 alias retroterm='~/cool-retro-term/cool-retro-term'
+alias servethis="python -m SimpleHTTPServer"
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
