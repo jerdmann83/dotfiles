@@ -103,7 +103,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR="vim"
+export EDITOR="emacsclient -nw"
 
 # debesys stuff
 alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife'
