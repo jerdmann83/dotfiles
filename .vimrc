@@ -30,9 +30,6 @@ set smartcase
 set incsearch
 set hlsearch
 
-"path stuff
-set autochdir
-
 set splitright
 set cursorline
 set ruler
