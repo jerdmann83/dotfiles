@@ -77,6 +77,10 @@ alias dot='cd ~/.dotfiles'
 alias retroterm='~/cool-retro-term/cool-retro-term'
 alias servethis="python -m SimpleHTTPServer"
 
+alias tnew='tmux new-session -s '
+alias tattach='tmux attach-session -t '
+alias tlist='tmux list-session'
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
