@@ -97,3 +97,10 @@ function geticinga {
     curl -u jerdmann -k "https://icinga/icinga/cgi-bin/status.cgi?host=all&type=detail&csvoutput" | grep "$1" | cut -f1 -d\; | sed "s/'//g" | sort -u
 }
 
+function em {
+    emacs -nw $1
+}
+
+function ee {
+    emacsclient -nw $1
+}

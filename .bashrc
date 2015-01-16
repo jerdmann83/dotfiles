@@ -63,20 +63,16 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more aliases
-alias em='emacs -nw'
-alias ee='emacsclient -nw'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias fixdns='sudo resolvconf -u'
 alias sb='source ~/.bashrc'
 alias eb='vim ~/.bashrc'
-alias gimme='sudo apt-get install'
 alias vcloud='~/debesys-scripts/run ~/debesys-scripts/deploy/chef/scripts/vcloud_server.py'
 alias bump='~/debesys-scripts/run python ~/debesys-scripts/deploy/chef/scripts/bump_cookbook_version.py'
 alias deploy='~/debesys-scripts/run python ~/debesys-scripts/deploy/chef/scripts/request_deploy.py'
 alias ack='ack-grep'
-alias eclipse='GTK2_RC_FILES=~/.gtkrc ~/eclipse/eclipse'
 alias dot='cd ~/.dotfiles'
 alias retroterm='~/cool-retro-term/cool-retro-term'
 alias servethis="python -m SimpleHTTPServer"
