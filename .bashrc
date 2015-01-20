@@ -80,6 +80,7 @@ alias servethis="python -m SimpleHTTPServer"
 alias tnew='tmux new-session -s '
 alias tattach='tmux attach-session -t '
 alias tlist='tmux list-session'
+alias gv='gvim --remote-silent'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -104,7 +105,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR="vim"
+export EDITOR="emacsclient -nw"
 
 # debesys stuff
 alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife'
@@ -121,10 +122,8 @@ export JENKINS_USER='jason.erdmann@tradingtechnologies.com'
 # ttnet project dirs
 alias cdspl='cd ~/ttnet/monitoring/splunk'
 alias cdici='cd ~/ttnet/monitoring/icinga'
-alias cdzab='cd ~/ttnet/monitoring/zabbix/misc_automation'
 alias cdds='cd ~/ttnet/monitoring/scripts/centosDs'
 alias deb='cd ~/debesys'
-alias dev='cd ~/dev-root'
 alias cb='cd ~/debesys/deploy/chef/cookbooks'
 
 # capslock is useless

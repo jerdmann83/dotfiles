@@ -55,6 +55,7 @@ set guioptions-=T
 set pastetoggle=<F2>
 map <F3> :NERDTreeToggle<CR>
 imap jf <Esc>
+imap jk <Esc>
 
 " bash-like commandline keys
 cnoremap <C-A> <Home>
@@ -66,8 +67,7 @@ nnoremap <leader>l :set invrelativenumber<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader><space> :noh<cr>
 
-nnoremap gj :bn<CR>
-nnoremap gk :bp<CR>
+nnoremap gl :b#<CR>
 
 nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-j> <C-w>j
