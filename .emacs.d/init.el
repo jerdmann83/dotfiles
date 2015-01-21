@@ -38,15 +38,10 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-(setq flycheck-disabled-checkers '(python-pylint))
 (setq flycheck-flake8rc "~/.config/flake8")
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-(require 'server)
-(if (server-running-p)
-    (message "Server is already running.")
-  (server-start)
-)
+(setq ruby-indent-level 4)
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
@@ -74,53 +69,5 @@
 
 (put 'downcase-region 'disabled nil)
 
-;function definitions
-(defun my-reindent-buffer ()
-  "Reindent entire buffer."
-  (interactive)
-  (save-excursion
-    (mark-whole-buffer)
-    (indent-region (region-beginning) (region-end))))
-
-(defun my-replace-string-whole-buffer ()
-  "Whole buffer version of replace-string."
-  (interactive)
-  (save-excursion
-    (beginning-of-buffer)
-    (call-interactively 'replace-string)))
-
-(defun my-replace-regexp-whole-buffer ()
-  "Whole buffer version of replace-regexp."
-  (interactive)
-  (save-excursion
-    (beginning-of-buffer)
-    (call-interactively 'replace-regexp)))
-
-(defun my-copy-whole-buffer ()
-  "Copy the entire buffer to the clipboard."
-  (interactive)
-  (save-excursion
-    (mark-whole-buffer)
-    (copy-region-as-kill (region-beginning) (region-end))))
-
-(defun my-reindent-copy-whole-buffer ()
-  "Reindent and copy the whole buffer to the clipboard."
-  (interactive)
-  (my-reindent-buffer)
-  (my-copy-whole-buffer))
-
-(defun my-toggle-ruby-indent ()
-  "Toggle the indent for ruby files."
-  (interactive)
-  (setq ruby-indent-level (if (= ruby-indent-level 2) 4 2)))
-
-(defun my-open-newline ()
-  "Open a newline regardless of current position of point."
-  (interactive)
-  (move-end-of-line nil)
-  (newline-and-indent))
-
 ;key bindings
 (global-set-key (kbd "<RET>") 'newline-and-indent)
-(global-set-key (kbd "C-x k") 'kill-this-buffer)
-(global-set-key (kbd "C-o") 'my-open-newline)
