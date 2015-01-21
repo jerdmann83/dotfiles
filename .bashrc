@@ -80,7 +80,6 @@ alias servethis="python -m SimpleHTTPServer"
 alias tnew='tmux new-session -s '
 alias tattach='tmux attach-session -t '
 alias tlist='tmux list-session'
-alias gv='gvim --remote-silent'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -105,7 +104,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR="emacsclient -nw"
+export EDITOR="vim"
 
 # debesys stuff
 alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife'
