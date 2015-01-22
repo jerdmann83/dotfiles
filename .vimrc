@@ -15,10 +15,9 @@ set autoread
 
 "appearance stuff
 syntax on
-filetype plugin indent on
 set t_Co=256
 set t_ut=
-colorscheme badwolf
+colorscheme Tomorrow-Night
 set title
 set ttyfast
 "always redraw statusline
@@ -53,7 +52,6 @@ set guioptions-=m
 set guioptions-=T
 
 set pastetoggle=<F2>
-map <F3> :NERDTreeToggle<CR>
 imap jf <Esc>
 
 " bash-like commandline keys
@@ -73,5 +71,8 @@ nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-j> <C-w>j
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-l> <C-w>l
+
+nnoremap : ;
+nnoremap ; :
 
 nnoremap Q <nop>
