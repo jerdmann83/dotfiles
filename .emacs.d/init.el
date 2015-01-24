@@ -61,7 +61,6 @@
 
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-follow-mouse 't)
-(setq scroll-step 1)
 
 (setq tramp-default-method "ssh")
 
