@@ -64,8 +64,6 @@
 
 (setq tramp-default-method "ssh")
 
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
 (put 'downcase-region 'disabled nil)
 (delete-selection-mode 1)
 
