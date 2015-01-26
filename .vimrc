@@ -3,6 +3,10 @@ filetype off
 execute pathogen#infect()
 filetype plugin indent on
 
+set expandtab
+set shiftwidth=4
+set tabstop=4
+
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_enable_perl_checker = 1
 
@@ -17,13 +21,12 @@ set autoread
 syntax on
 set t_Co=256
 set t_ut=
-colorscheme Tomorrow-Night
+colorscheme badwolf
 set title
 set ttyfast
 "always redraw statusline
 set laststatus=2
 
-"search stuff
 set ignorecase
 set smartcase
 set incsearch
@@ -74,5 +77,8 @@ nnoremap <silent> <C-l> <C-w>l
 
 nnoremap : ;
 nnoremap ; :
+
+vnoremap : ;
+vnoremap ; :
 
 nnoremap Q <nop>
