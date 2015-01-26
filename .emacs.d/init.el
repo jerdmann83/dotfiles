@@ -67,6 +67,8 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (put 'downcase-region 'disabled nil)
+(delete-selection-mode 1)
 
 ;key bindings
 (global-set-key (kbd "<RET>") 'newline-and-indent)
+(global-set-key (kbd "M-n") 'dabbrev-expand)
