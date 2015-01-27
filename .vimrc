@@ -21,7 +21,7 @@ set autoread
 syntax on
 set t_Co=256
 set t_ut=
-colorscheme badwolf
+colorscheme Tomorrow-Night-Bright
 set title
 set ttyfast
 "always redraw statusline
@@ -42,8 +42,6 @@ set scrolloff=2
 set wildmenu
 set wildmode=longest,list
 set wildignore=*.swp,*.pyc
-
-set number
 
 set mouse=a
 
