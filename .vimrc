@@ -11,17 +11,19 @@ let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_enable_perl_checker = 1
 
 set history=1000
-set noswapfile
 set clipboard=unnamed
 set go+=a
 set shortmess=atI
 set autoread
 
+"automatically trim trailing whitespace on write
+autocmd BufWritePre * :%s/\s\+$//e
+
 "appearance stuff
 syntax on
 set t_Co=256
 set t_ut=
-colorscheme Tomorrow-Night-Bright
+colorscheme badwolf
 set title
 set ttyfast
 "always redraw statusline
@@ -78,5 +80,3 @@ nnoremap ; :
 
 vnoremap : ;
 vnoremap ; :
-
-nnoremap Q <nop>
