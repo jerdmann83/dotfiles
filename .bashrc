@@ -48,6 +48,7 @@ function _prompt_command()
 		PS1+=" $blue(\$(git branch 2>/dev/null | grep '^*' | cut -f2 -d' '))"
 	fi
 	PS1+="$green \w$reset\r\n>"
+    PS2="$blue>$reset"
 }
 
 # enable color support of ls and also add handy aliases
