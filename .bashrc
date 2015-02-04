@@ -123,8 +123,10 @@ export JENKINS_USER='jason.erdmann@tradingtechnologies.com'
 alias cdspl='cd ~/ttnet/monitoring/splunk'
 alias cdici='cd ~/ttnet/monitoring/icinga'
 alias cdds='cd ~/ttnet/monitoring/scripts/centosDs'
-alias deb='cd ~/debesys'
-alias cb='cd ~/debesys/deploy/chef/cookbooks'
+alias debone='cd ~/dev-root/debesys-one'
+alias debtwo='cd ~/dev-root/debesys-two'
+alias debthree='cd ~/dev-root/debesys-three'
+alias cb='cd `git rev-parse --show-toplevel`/deploy/chef/cookbooks'
 
 # capslock is useless
 setxkbmap -option ctrl:nocaps 2>/dev/null
