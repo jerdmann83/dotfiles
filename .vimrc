@@ -75,8 +75,5 @@ nnoremap <silent> <C-j> <C-w>j
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-l> <C-w>l
 
-nnoremap : ;
 nnoremap ; :
-
-vnoremap : ;
 vnoremap ; :
