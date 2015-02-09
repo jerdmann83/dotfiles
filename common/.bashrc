@@ -76,6 +76,7 @@ alias deploy='~/debesys-scripts/run python ~/debesys-scripts/deploy/chef/scripts
 alias ack='ack-grep'
 alias deb='cd $(pwd | grep dev-root | cut -f1-5 -d\/) || echo "Not in a repo under dev-root."'
 alias dev='cd ~/dev-root'
+alias debs='cd ~/debesys-scripts'
 alias dot='cd ~/.dotfiles'
 alias retroterm='~/cool-retro-term/cool-retro-term'
 alias servethis="python -m SimpleHTTPServer"
