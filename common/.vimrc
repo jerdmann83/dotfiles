@@ -63,6 +63,7 @@ cnoremap <C-E> <End>
 cnoremap <C-K> <C-U>
 
 let mapleader = ","
+nnoremap <leader>b :BlogSave publish<cr>
 nnoremap <leader>l :set invrelativenumber<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader><space> :noh<cr>
