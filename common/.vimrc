@@ -4,8 +4,14 @@ execute pathogen#infect()
 filetype plugin indent on
 
 set expandtab
+set smarttab
 set shiftwidth=4
+set softtabstop=4
 set tabstop=4
+set shiftround
+
+set nobackup
+set noswapfile
 
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_enable_perl_checker = 1
@@ -21,11 +27,12 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 "appearance stuff
 syntax on
+colorscheme badwolf
 set t_Co=256
 set t_ut=
-colorscheme badwolf
 set title
 set ttyfast
+set lazyredraw
 "always redraw statusline
 set laststatus=2
 
