@@ -88,8 +88,8 @@ nnoremap <leader><space> :noh<cr>
 
 nnoremap gj :bn<CR>
 nnoremap gk :bp<CR>
-
 nnoremap Q <nop>
+nnoremap Y y$
 
 nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-j> <C-w>j
