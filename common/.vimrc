@@ -24,8 +24,16 @@ set shiftround
 set nobackup
 set noswapfile
 
+let g:ctrlp_working_path=0
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_enable_perl_checker = 1
+let g:syntastic_cursor_column = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 set history=1000
 set clipboard=unnamed
@@ -86,8 +94,7 @@ nnoremap <leader>l :set invrelativenumber<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader><space> :noh<cr>
 
-nnoremap gj :bn<CR>
-nnoremap gk :bp<CR>
+nnoremap gl :b#<CR>
 nnoremap Q <nop>
 nnoremap Y y$
 
