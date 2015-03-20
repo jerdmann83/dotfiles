@@ -22,8 +22,6 @@
 (setq-default indent-tabs-mode nil)
 (global-auto-revert-mode t)
 
-(setq custom-safe-themes t)
-(color-theme-sanityinc-tomorrow-night)
 (setq auto-save-default nil)
 (setq make-backup-files nil)
 (setq backup-inhibited t)

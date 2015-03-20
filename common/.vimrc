@@ -4,7 +4,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'pangloss/vim-javascript'
@@ -44,7 +43,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 "appearance stuff
 syntax on
-colorscheme badwolf
 set t_Co=256
 set t_ut=
 set title
@@ -59,7 +57,6 @@ set incsearch
 set hlsearch
 
 set splitright
-set cursorline
 set ruler
 set showcmd
 set hidden

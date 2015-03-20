@@ -83,6 +83,8 @@ alias dev='cd ~/dev-root'
 alias dot='cd ~/.dotfiles'
 alias retroterm='~/cool-retro-term/cool-retro-term'
 alias servethis="python -m SimpleHTTPServer"
+alias em='emacs -nw'
+alias emacs='emacs -nw'
 
 alias tnew='tmux new-session -s '
 alias tattach='tmux attach-session -t '
