@@ -78,11 +78,6 @@ set guioptions-=T
 set pastetoggle=<F2>
 imap jf <Esc>
 
-" bash-like commandline keys
-cnoremap <C-A> <Home>
-cnoremap <C-E> <End>
-cnoremap <C-K> <C-U>
-
 let mapleader = ","
 nnoremap <leader>b :BlogSave publish<cr>
 nnoremap <leader>l :set invrelativenumber<cr>
