@@ -43,6 +43,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 "appearance stuff
 syntax on
+colors twilight
 set t_Co=256
 set t_ut=
 set title
@@ -76,7 +77,7 @@ set guioptions-=m
 set guioptions-=T
 
 set pastetoggle=<F2>
-imap jf <Esc>
+imap kj <Esc>
 
 let mapleader = ","
 nnoremap <leader>b :BlogSave publish<cr>
