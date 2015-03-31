@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="font" mtime="1427765105" type="string">
+		<stringvalue>DejaVu Sans Mono 10</stringvalue>
+	</entry>
+	<entry name="use_system_font" mtime="1427765105" type="bool" value="false"/>
+	<entry name="scrollback_lines" mtime="1427765105" type="int" value="5000"/>
+	<entry name="use_theme_background" mtime="1427750916" type="bool" value="false"/>
+	<entry name="use_theme_colors" mtime="1427765105" type="bool" value="false"/>
+	<entry name="bold_color_same_as_fg" mtime="1427750916" type="bool" value="true"/>
+	<entry name="bold_color" mtime="1427765105" type="string">
+		<stringvalue>#F8F8F8F8F2F2</stringvalue>
+	</entry>
+	<entry name="foreground_color" mtime="1427765105" type="string">
+		<stringvalue>#F8F8F8F8F2F2</stringvalue>
+	</entry>
+	<entry name="background_color" mtime="1427765177" type="string">
+		<stringvalue>#1B1B1D1D1E1E</stringvalue>
+	</entry>
+	<entry name="palette" mtime="1427765105" type="string">
+		<stringvalue>#272728282222:#F9F926267272:#A6A6E2E22E2E:#F4F4BFBF7575:#6666D9D9EFEF:#AEAE8181FFFF:#A1A1EFEFE4E4:#F8F8F8F8F2F2:#757571715E5E:#F9F926267272:#A6A6E2E22E2E:#F4F4BFBF7575:#6666D9D9EFEF:#AEAE8181FFFF:#A1A1EFEFE4E4:#F9F9F8F8F5F5</stringvalue>
+	</entry>
+	<entry name="visible_name" mtime="1427765105" type="string">
+		<stringvalue>Base 16 Monokai Dark</stringvalue>
+	</entry>
+</gconf>
