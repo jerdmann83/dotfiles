@@ -3,6 +3,8 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'bling/vim-airline'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'pangloss/vim-javascript'
@@ -43,6 +45,8 @@ set autoread
 
 "appearance stuff
 syntax on
+"colors badwolf
+"set t_Co=256
 set t_ut=
 set title
 set ttyfast
