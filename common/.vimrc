@@ -30,6 +30,7 @@ let g:syntastic_enable_perl_checker = 1
 let g:syntastic_cursor_column = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_ruby_mri_args = '-T1 -c'
 
 set history=1000
 set clipboard=unnamed
