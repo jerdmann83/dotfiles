@@ -38,8 +38,8 @@ set go+=a
 set shortmess=atI
 set autoread
 
-"automatically trim trailing whitespace on write
-autocmd BufWritePre * :%s/\s\+$//e
+"not automatically triming trailing whitespace on write
+"autocmd BufWritePre * :%s/\s\+$//e
 
 "appearance stuff
 syntax on
