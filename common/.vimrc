@@ -45,8 +45,8 @@ set autoread
 
 "appearance stuff
 syntax on
-"colors badwolf
-"set t_Co=256
+colors badwolf
+set t_Co=256
 set t_ut=
 set title
 set ttyfast
