@@ -9,7 +9,7 @@
 (when (not package-archive-contents)
     (package-refresh-contents))
 
-(defvar my-packages '(auto-complete flycheck pyflakes paredit))
+(defvar my-packages '(ac-python auto-complete flycheck pyflakes paredit))
 
 (dolist (p my-packages)
     (when (not (package-installed-p p))
@@ -34,7 +34,6 @@
 (tool-bar-mode -1)
 
 (setq flycheck-flake8rc "~/.config/flake8")
-(add-hook 'after-init-hook #'global-flycheck-mode)
 
 (setq ruby-indent-level 4)
 
@@ -45,14 +44,15 @@
 (ido-mode t)
 (setq ido-enable-flex-matching 1)
 
-(require 'flycheck)
-(global-flycheck-mode t)
-
-(set-frame-font "DejaVu Sans Mono")
-(set-face-attribute 'default nil :height 108)
+(setq custom-safe-themes t)
+(if (display-graphic-p)
+    (progn
+      (load-theme 'tango-dark)
+      (set-frame-font "DejaVu Sans Mono")
+      (set-face-attribute 'default nil :height 108)))
 
 (setq tramp-default-method "ssh")
 
 ;key bindings
 (global-set-key (kbd "<RET>") 'newline-and-indent)
-(global-set-key (kbd "M-n") 'dabbrev-expand)
+(global-set-key (kbd "M-/") 'hippie-expand)
