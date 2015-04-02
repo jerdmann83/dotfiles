@@ -45,7 +45,7 @@ set autoread
 
 "appearance stuff
 syntax on
-colors badwolf
+colors molokai
 set t_Co=256
 set t_ut=
 set title
