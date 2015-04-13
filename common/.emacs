@@ -44,8 +44,6 @@
 
 (setenv "PAGER" "cat")
 
-(comint-scroll-to-bottom-on-input t)
-
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
