@@ -40,9 +40,6 @@ set go+=a
 set shortmess=atI
 set autoread
 
-"not automatically triming trailing whitespace on write
-"autocmd BufWritePre * :%s/\s\+$//e
-
 "appearance stuff
 syntax on
 colors badwolf
@@ -84,6 +81,7 @@ imap kj <Esc>
 let mapleader = ","
 nnoremap <leader>b :BlogSave publish<cr>
 nnoremap <leader>l :set invrelativenumber<cr>
+nnoremap <leader>t :%s/\s\+$//e<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader><space> :noh<cr>
 
