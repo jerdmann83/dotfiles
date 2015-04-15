@@ -27,6 +27,8 @@ set noswapfile
 let g:ctrlp_working_path=0
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
+let g:ag_prg="ag --column --nogroup --noheading --nobreak"
+
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_cursor_column = 0
@@ -68,10 +70,6 @@ set wildignore=*.swp,*.pyc
 
 set mouse=a
 
-" easier jump to exact mark position
-nnoremap ' `
-nnoremap ` '
-
 set guioptions-=m
 set guioptions-=T
 
@@ -79,7 +77,6 @@ set pastetoggle=<F2>
 imap kj <Esc>
 
 let mapleader = ","
-nnoremap <leader>b :BlogSave publish<cr>
 nnoremap <leader>l :set invrelativenumber<cr>
 nnoremap <leader>t :%s/\s\+$//e<cr>
 nnoremap <leader>w :w<cr>

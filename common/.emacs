@@ -6,6 +6,8 @@
              '("melpa" . "http://milkbox.org/packages/") t)
 (package-initialize)
 
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+
 (defun install-my-packages ()
   (interactive)
   (when (not package-archive-contents)
@@ -15,8 +17,7 @@
                flycheck
                pyflakes
                paredit
-               projectile
-               color-theme-sanityinc-tomorrow))
+               projectile))
     (when (not (package-installed-p p))
       (package-install p))))
 
@@ -57,7 +58,7 @@
 (setq custom-safe-themes t)
 (if (display-graphic-p)
     (progn
-      (load-theme 'tango-dark)
+      (load-theme 'spolsky)
       (set-frame-font "DejaVu Sans Mono")
       (set-face-attribute 'default nil :height 108)))
 
