@@ -35,8 +35,8 @@
 (xterm-mouse-mode 1)
 
 (setq inhibit-startup-screen 1)
-(menu-bar-mode -1)
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 
 (setq flycheck-flake8rc "~/.config/flake8")
 
@@ -57,7 +57,7 @@
 (setq custom-safe-themes t)
 (if (display-graphic-p)
     (progn
-      (color-theme-sanityinc-tomorrow-night)
+      (load-theme 'tango-dark)
       (set-frame-font "DejaVu Sans Mono")
       (set-face-attribute 'default nil :height 108)))
 
