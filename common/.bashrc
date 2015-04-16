@@ -88,6 +88,7 @@ alias emacs='emacs -nw'
 
 alias tnew='tmux new-session -s '
 alias tattach='tmux attach-session -t '
+alias tkill='tmux kill-session -t '
 alias tlist='tmux list-session'
 
 if [ -f ~/.bash_aliases ]; then
