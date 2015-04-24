@@ -9,4 +9,4 @@
     co = checkout
     cm = commit
     st = status
-    up = !git pull && git submodule init && git submodule update && git remote prune origin
+    up = !git pull -q && git submodule -q init && git submodule -q update && git remote prune origin
