@@ -77,8 +77,6 @@ set wildmenu
 set wildmode=longest,list
 set wildignore=*.swp,*.pyc
 
-set mouse=a
-
 set guioptions-=m
 set guioptions-=T
 
