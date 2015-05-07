@@ -26,8 +26,8 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set 256 color support
-export TERM=xterm-256color
+# set term type
+export TERM=xterm
 
 # set prompt
 blue="\[\e[1;34m\]"

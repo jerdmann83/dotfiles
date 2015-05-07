@@ -3,15 +3,12 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'bling/vim-airline'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/neocomplete.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -23,7 +20,6 @@ set tabstop=4
 set shiftround
 
 set nobackup
-set noswapfile
 
 let g:ctrlp_working_path=0
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
@@ -40,10 +36,6 @@ let g:syntastic_ruby_mri_args = '-T1 -c'
 let g:neocomplete#enable_at_startup = 0
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
-"some keybinds stolen from the neocomplete example config
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 set history=1000
 set clipboard=unnamed
@@ -53,19 +45,18 @@ set autoread
 
 "appearance stuff
 syntax on
-colors badwolf
 set t_Co=256
 set t_ut=
 set title
 set ttyfast
 set lazyredraw
-"always redraw statusline
-set laststatus=2
 
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
+hi Search cterm=NONE ctermfg=black ctermbg=yellow
+hi SyntasticError cterm=NONE ctermfg=black ctermbg=red
 
 set splitright
 set ruler
