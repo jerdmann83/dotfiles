@@ -27,7 +27,7 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set term type
-export TERM=xterm
+export TERM=xterm-256color
 
 # set prompt
 blue="\[\e[1;34m\]"

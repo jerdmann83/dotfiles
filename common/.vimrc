@@ -2,7 +2,9 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'pangloss/vim-javascript'
@@ -45,18 +47,20 @@ set autoread
 
 "appearance stuff
 syntax on
+colors molokai
 set t_Co=256
 set t_ut=
 set title
 set ttyfast
 set lazyredraw
+set laststatus=2
 
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-hi Search cterm=NONE ctermfg=black ctermbg=yellow
-hi SyntasticError cterm=NONE ctermfg=black ctermbg=red
+"hi Search cterm=NONE ctermfg=black ctermbg=yellow
+"hi SyntasticError cterm=NONE ctermfg=black ctermbg=red
 
 set splitright
 set ruler
