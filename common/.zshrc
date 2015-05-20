@@ -5,7 +5,7 @@ export ZSH=/home/jason/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="jason"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -75,6 +75,8 @@ alias debs='cd ~/debesys-scripts'
 alias dev='cd ~/dev-root'
 alias dot='cd ~/.dotfiles'
 alias gvim='gvim --remote-silent'
+alias ez='vim ~/.zshrc'
+alias sz='source ~/.zshrc'
 
 alias tnew='tmux new-session -s '
 alias tattach='tmux attach-session -t '
@@ -110,3 +112,8 @@ setxkbmap -option ctrl:nocaps 2>/dev/null
 
 # set brightness
 xbacklight -set 90 2>/dev/null || cat /dev/null
+
+# some function definitions
+function vpn {
+    sudo /home/jason/.juniper_networks/ncsvc -h us-ttvpn.tradingtechnologies.com -u jerdmann -p $1 -r "TT VPN" -f /home/jason/.juniper_networks/tt.cert
+}
