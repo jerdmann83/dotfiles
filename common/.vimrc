@@ -47,7 +47,7 @@ set autoread
 
 "appearance stuff
 syntax on
-colors molokai
+colors badwolf
 set t_Co=256
 set t_ut=
 set title
@@ -95,3 +95,8 @@ nnoremap <silent> <C-l> <C-w>l
 
 nnoremap ; :
 vnoremap ; :
+
+if v:progname == "nvim"
+    let g:terminal_scrollback_buffer_size=10000
+    tnoremap <Esc> <C-\><C-n>
+endif
