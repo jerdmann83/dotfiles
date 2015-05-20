@@ -11,6 +11,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-surround'
 call vundle#end()
 filetype plugin indent on
 
