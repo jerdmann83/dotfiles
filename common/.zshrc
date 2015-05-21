@@ -31,7 +31,7 @@ ZSH_THEME="jason"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -103,7 +103,7 @@ alias debtwo='cd ~/dev-root/debesys-two'
 alias debthree='cd ~/dev-root/debesys-three'
 alias cb='cd `git rev-parse --show-toplevel`/deploy/chef/cookbooks'
 
-if [ -f ~/.keys ]; then
+if [[ -f ~/.keys ]]; then
     . ~/.keys
 fi
 
@@ -116,4 +116,38 @@ xbacklight -set 90 2>/dev/null || cat /dev/null
 # some function definitions
 function vpn {
     sudo /home/jason/.juniper_networks/ncsvc -h us-ttvpn.tradingtechnologies.com -u jerdmann -p $1 -r "TT VPN" -f /home/jason/.juniper_networks/tt.cert
+}
+
+function external()
+{
+    usage="external on|off"
+    if [[ -z "$1" ]]; then
+        echo $usage
+        return
+    fi
+
+    if [[ "on" == "$1" ]]; then
+        export PRE_EXTERNAL_PS1=$PS1
+        export PS1="%{$fg[red]%}[EXTERNAL DEBESYS] $PRE_EXTERNAL_PS1"
+        alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife -C ~/.chef/knife.external.rb'
+        alias ttknife
+        echo
+        echo '######## ##     ## ######## ######## ########  ##    ##    ###    ##'
+        echo '##        ##   ##     ##    ##       ##     ## ###   ##   ## ##   ##'
+        echo '##         ## ##      ##    ##       ##     ## ####  ##  ##   ##  ##'
+        echo '######      ###       ##    ######   ########  ## ## ## ##     ## ##'
+        echo '##         ## ##      ##    ##       ##   ##   ##  #### ######### ##'
+        echo '##        ##   ##     ##    ##       ##    ##  ##   ### ##     ## ##'
+        echo '######## ##     ##    ##    ######## ##     ## ##    ## ##     ## ########'
+        echo
+        # http://patorjk.com/software/taag/#p=display&h=1&v=1&f=Banner3&t=EXTERNAL
+    elif [[ "off" == "$1" ]]; then
+        if [[ ! -z "$PRE_EXTERNAL_PS1" ]]; then
+            export PS1=$PRE_EXTERNAL_PS1
+        fi
+        alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife'
+        alias ttknife
+    else
+        echo $usage
+    fi
 }
