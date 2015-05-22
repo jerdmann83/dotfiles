@@ -4,12 +4,14 @@ autoload -U colors && colors
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats ' (%b)'
 zstyle ':vcs_info:*' enable git
-precmd() { vcs_info }
+precmd() {
+    vcs_info
+}
 
-PROMPT="%(?..$fg_bold[red][%?]$reset_color)"
-PROMPT+="%{$fg_bold[green]%}%n@%m"
+RPROMPT="%(?.%{$fg_bold[green]%}.%{$fg_bold[red]%})[%?]%{$reset_color%}"
+PROMPT="%{$fg_bold[green]%}%n@%m"
 PROMPT+='%{$fg_bold[blue]%}${vcs_info_msg_0_}'
-PROMPT+="%{$fg_bold[green]%} %~$reset_color
+PROMPT+="%{$fg_bold[green]%} %~%{$reset_color%}
 >"
 
 setopt histignorealldups
@@ -23,6 +25,9 @@ bindkey -e
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
 # Use modern completion system
 autoload -Uz compinit
