@@ -2,17 +2,14 @@
 export TERM=xterm-256color
 autoload -U colors && colors
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats ' (%b)'
+zstyle ':vcs_info:*' formats '%b '
 zstyle ':vcs_info:*' enable git
 precmd() {
     vcs_info
 }
 
-RPROMPT="%(?.%{$fg_bold[green]%}.%{$fg_bold[red]%})[%?]%{$reset_color%}"
-PROMPT="%{$fg_bold[green]%}%n@%m"
-PROMPT+='%{$fg_bold[blue]%}${vcs_info_msg_0_}'
-PROMPT+="%{$fg_bold[green]%} %~%{$reset_color%}
->"
+RPROMPT='%(?.%{$fg_bold[green]%}.%{$fg_bold[red]%})[%?]%{$reset_color%}'
+PROMPT='%{$fg_bold[blue]%}${vcs_info_msg_0_}%{$fg_bold[green]%}%1~>%{$reset_color%}'
 
 setopt histignorealldups
 setopt sharehistory
