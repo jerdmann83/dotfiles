@@ -1,19 +1,20 @@
 # Set up the prompt
-autoload -U colors && colors
 export TERM=xterm-256color
-precmd() {
-    PS1="%(?..$fg_bold[red][%?]$reset_color)"
-	PS1+="%{$fg_bold[green]%}%n@%m"
-	git branch &>/dev/null
-	if [[ "$?" == "0" ]]; then
-		PS1+=" %{$fg_bold[blue]%}(\$(git branch 2>/dev/null | grep '^*' | cut -f2 -d' '))"
-	fi
-	PS1+="%{$fg_bold[green]%} %~$reset_color
+autoload -U colors && colors
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats ' (%b)'
+zstyle ':vcs_info:*' enable git
+precmd() { vcs_info }
+
+PROMPT="%(?..$fg_bold[red][%?]$reset_color)"
+PROMPT+="%{$fg_bold[green]%}%n@%m"
+PROMPT+='%{$fg_bold[blue]%}${vcs_info_msg_0_}'
+PROMPT+="%{$fg_bold[green]%} %~$reset_color
 >"
-}
 
 setopt histignorealldups
 setopt sharehistory
+setopt promptsubst
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
