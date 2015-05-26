@@ -97,7 +97,7 @@ fi
 setxkbmap -option ctrl:nocaps 2>/dev/null
 
 # set brightness
-xbacklight -set 90 2>/dev/null || cat /dev/null
+xbacklight -set 80 2>/dev/null || cat /dev/null
 
 # some function definitions
 function vpn {
