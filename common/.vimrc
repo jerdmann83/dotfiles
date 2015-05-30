@@ -79,9 +79,10 @@ set guioptions-=T
 set pastetoggle=<F2>
 imap kj <Esc>
 
+autocmd BufWritePre * :%s/\s\+$//e
+
 let mapleader = ","
 nnoremap <leader>l :set invrelativenumber<cr>
-nnoremap <leader>t :%s/\s\+$//e<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader><space> :noh<cr>
 

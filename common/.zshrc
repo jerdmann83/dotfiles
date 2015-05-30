@@ -9,7 +9,8 @@ precmd() {
 }
 
 RPROMPT='%(?.%{$fg_bold[green]%}.%{$fg_bold[red]%})[%?]%{$reset_color%}'
-PROMPT='%{$fg_bold[blue]%}${vcs_info_msg_0_}%{$fg_bold[green]%}%1~ %1(j.%{$fg_bold[yellow]%}(%j%).)%{$fg_bold[green]%}> %{$reset_color%}'
+PROMPT='%{$fg_bold[green]%}%n@%m %{$fg_bold[blue]%}${vcs_info_msg_0_}%{$fg_bold[green]%}%~
+%1(j.%{$fg_bold[yellow]%}(%j%).)%{$fg_bold[green]%}>%{$reset_color%} '
 
 setopt histignorealldups
 setopt sharehistory
