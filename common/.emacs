@@ -9,12 +9,8 @@
   (interactive)
   (when (not package-archive-contents)
     (package-refresh-contents))
-  (dolist (p '(ac-python
-               auto-complete
-               flycheck
-               pyflakes
-               paredit
-               projectile))
+  (dolist (p '(flycheck
+               pyflakes))
     (when (not (package-installed-p p))
       (package-install p))))
 
@@ -40,8 +36,6 @@
 
 (setq ruby-indent-level 4)
 
-(setenv "PAGER" "cat")
-
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
@@ -49,27 +43,27 @@
 (ido-mode t)
 (setq ido-enable-flex-matching 1)
 
+(setq grep-command "grep -nHR -e ")
 
 ;key bindings
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 (define-key global-map [C-tab] 'indent-region)
 (define-key global-map "\t" 'dabbrev-expand)
 
-
-;huge thanks to Casey from handmadehero for the below
+;huge thanks to Casey from handmadehero for inspiring the below
 (if (display-graphic-p)
     (progn
       (add-to-list 'default-frame-alist '(font . "Liberation Mono-11"))
       (set-face-attribute 'default t :font "Liberation Mono-11")))
 (set-face-attribute 'font-lock-builtin-face nil :foreground "gold")
 (set-face-attribute 'font-lock-comment-face nil :foreground "gray50")
-(set-face-attribute 'font-lock-constant-face nil :foreground "olive drab")
+(set-face-attribute 'font-lock-constant-face nil :foreground "DarkOrange1")
 (set-face-attribute 'font-lock-doc-face nil :foreground "gray50")
 (set-face-attribute 'font-lock-function-name-face nil :foreground "chartreuse3")
-(set-face-attribute 'font-lock-keyword-face nil :foreground "DarkGoldenrod3")
+(set-face-attribute 'font-lock-keyword-face nil :foreground "red1")
 (set-face-attribute 'font-lock-string-face nil :foreground "burlywood")
 (set-face-attribute 'font-lock-type-face nil :foreground "white smoke")
-(set-face-attribute 'font-lock-variable-name-face nil :foreground "SpringGreen2")
+(set-face-attribute 'font-lock-variable-name-face nil :foreground "white smoke")
 (set-face-attribute 'minibuffer-prompt nil :foreground "cyan")
 
 (defun post-load-stuff ()
