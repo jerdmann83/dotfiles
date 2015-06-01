@@ -8,7 +8,6 @@ precmd() {
     vcs_info
 }
 
-RPROMPT='%(?.%{$fg_bold[green]%}.%{$fg_bold[red]%})[%?]%{$reset_color%}'
 PROMPT='%{$fg_bold[green]%}%n@%m %{$fg_bold[blue]%}${vcs_info_msg_0_}%{$fg_bold[green]%}%~
 %1(j.%{$fg_bold[yellow]%}(%j%).)%{$fg_bold[green]%}>%{$reset_color%} '
 
@@ -49,7 +48,7 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-export EDITOR='vim'
+export EDITOR='emacs -nw'
 
 alias vcloud='~/debesys-scripts/run ~/debesys-scripts/deploy/chef/scripts/vcloud_server.py'
 alias bump='~/debesys-scripts/run python ~/debesys-scripts/deploy/chef/scripts/bump_cookbook_version.py'
@@ -62,6 +61,7 @@ alias debs='cd ~/debesys-scripts'
 alias dev='cd ~/dev-root'
 alias dot='cd ~/.dotfiles'
 alias gvim='gvim --remote-silent'
+alias emacs='emacs -nw'
 alias ez='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 
