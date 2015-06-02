@@ -14,28 +14,30 @@
     (when (not (package-installed-p p))
       (package-install p))))
 
-(fset 'yes-or-no-p 'y-or-n-p)
-(setq-default highlight-tabs t)
 (show-paren-mode t)
-(setq mouse-yank-at-point t)
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq vc-follow-symlinks 1)
+(setq require-final-newline t)
+
+(setq-default highlight-tabs t)
 (setq-default indent-tabs-mode nil)
 (global-auto-revert-mode t)
+(setq ruby-indent-level 4)
 
 (setq auto-save-default nil)
 (setq make-backup-files nil)
 (setq backup-inhibited t)
-(setq vc-follow-symlinks 1)
-(setq require-final-newline t)
 (xterm-mouse-mode 1)
+(setq mouse-yank-at-point t)
 
 (setq inhibit-startup-screen 1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+(column-number-mode)
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq flycheck-flake8rc "~/.config/flake8")
-
-(setq ruby-indent-level 4)
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
@@ -48,12 +50,18 @@
 
 ;key bindings
 (global-set-key (kbd "<RET>") 'newline-and-indent)
+(global-set-key (kbd "C-o") 'other-window)
+(global-set-key (kbd "<C-tab>") 'indent-for-tab-command)
+(global-set-key (kbd "TAB") 'dabbrev-expand)
+(global-set-key (kbd "M-s") 'save-buffer)
+(global-set-key (kbd "M-r") 'revert-buffer)
 
 ;huge thanks to Casey from handmadehero for inspiring the below
 (if (display-graphic-p)
     (progn
       (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10.5"))
       (set-face-attribute 'default t :font "DejaVu Sans Mono-10.5")))
+
 (set-face-attribute 'font-lock-builtin-face nil :foreground "gold")
 (set-face-attribute 'font-lock-comment-face nil :foreground "gray50")
 (set-face-attribute 'font-lock-constant-face nil :foreground "DarkOrange1")
