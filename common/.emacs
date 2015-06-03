@@ -50,6 +50,7 @@
 
 ;key bindings
 (global-set-key (kbd "<RET>") 'newline-and-indent)
+(global-set-key (kbd "C-b") 'ido-switch-buffer)
 (global-set-key (kbd "C-o") 'other-window)
 (global-set-key (kbd "<C-tab>") 'indent-for-tab-command)
 (global-set-key (kbd "TAB") 'dabbrev-expand)
