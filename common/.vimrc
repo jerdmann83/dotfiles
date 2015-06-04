@@ -98,6 +98,8 @@ nnoremap <silent> <C-l> <C-w>l
 nnoremap ; :
 vnoremap ; :
 
+inoremap <tab> <C-n>
+
 set shell=/usr/bin/zsh
 if v:progname == "nvim"
     let g:terminal_scrollback_buffer_size=10000
