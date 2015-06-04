@@ -1,19 +1,3 @@
-;set up repos
-(require 'package)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")))
-(package-initialize)
-
-(defun install-my-packages ()
-  (interactive)
-  (when (not package-archive-contents)
-    (package-refresh-contents))
-  (dolist (p '(flycheck
-               pyflakes))
-    (when (not (package-installed-p p))
-      (package-install p))))
-
 (show-paren-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq vc-follow-symlinks 1)
@@ -72,6 +56,7 @@
 (set-face-attribute 'font-lock-string-face nil :foreground "burlywood")
 (set-face-attribute 'font-lock-type-face nil :foreground "white smoke")
 (set-face-attribute 'font-lock-variable-name-face nil :foreground "white smoke")
+(set-face-attribute 'region nil :background "midnight blue")
 (set-face-attribute 'minibuffer-prompt nil :foreground "cyan")
 
 (defun post-load-stuff ()
@@ -81,3 +66,19 @@
   (set-cursor-color "lime green")
 )
 (add-hook 'window-setup-hook 'post-load-stuff t)
+
+;set up repos
+(require 'package)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
+(package-initialize)
+
+(defun install-my-packages ()
+  (interactive)
+  (when (not package-archive-contents)
+    (package-refresh-contents))
+  (dolist (p '(flycheck
+               pyflakes))
+    (when (not (package-installed-p p))
+      (package-install p))))
