@@ -56,6 +56,8 @@
 (set-face-attribute 'font-lock-string-face nil :foreground "burlywood")
 (set-face-attribute 'font-lock-type-face nil :foreground "white smoke")
 (set-face-attribute 'font-lock-variable-name-face nil :foreground "white smoke")
+(set-face-attribute 'isearch nil :background "DarkOrange1")
+(set-face-attribute 'lazy-highlight nil :background "midnight blue")
 (set-face-attribute 'region nil :background "midnight blue")
 (set-face-attribute 'minibuffer-prompt nil :foreground "cyan")
 

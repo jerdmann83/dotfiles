@@ -120,6 +120,10 @@ setxkbmap -option ctrl:nocaps 2>/dev/null
 xbacklight -set 80 2>/dev/null || cat /dev/null
 
 # some function definitions
+function cbup {
+    knife cookbook --cookbook-path `git rev-parse --show-toplevel`/deploy/chef/cookbooks upload $1
+}
+
 function vpn {
     sudo /home/jason/.juniper_networks/ncsvc -h us-ttvpn.tradingtechnologies.com -u jerdmann -p $1 -r "TT VPN" -f /home/jason/.juniper_networks/tt.cert
 }
