@@ -55,7 +55,7 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-export EDITOR='emacs -nw'
+export EDITOR='vim'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -75,7 +75,7 @@ alias dev='cd ~/dev-root'
 alias dot='cd ~/.dotfiles'
 alias gvim='gvim --remote-silent'
 alias emacs='emacs -nw'
-alias ez='vim ~/.zshrc'
+alias ez="$EDITOR ~/.zshrc"
 alias sz='source ~/.zshrc'
 
 alias tnew='tmux new-session -s '
