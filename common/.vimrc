@@ -12,6 +12,7 @@ Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
+Plugin 'Shougo/neocomplete.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -97,11 +98,3 @@ nnoremap <silent> <C-l> <C-w>l
 
 nnoremap ; :
 vnoremap ; :
-
-inoremap <tab> <C-n>
-
-set shell=/usr/bin/zsh
-if v:progname == "nvim"
-    let g:terminal_scrollback_buffer_size=10000
-    tnoremap <Esc> <C-\><C-n>
-endif

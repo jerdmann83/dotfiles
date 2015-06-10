@@ -21,7 +21,6 @@
 (column-number-mode)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-(setq flycheck-flake8rc "~/.config/flake8")
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
@@ -36,8 +35,9 @@
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 (global-set-key (kbd "C-b") 'ido-switch-buffer)
 (global-set-key (kbd "C-o") 'other-window)
-(global-set-key (kbd "<C-tab>") 'indent-for-tab-command)
-(global-set-key (kbd "TAB") 'dabbrev-expand)
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
+(global-set-key (kbd "C-n") 'dabbrev-expand)
+(global-set-key (kbd "C-p") 'find-dired)
 (global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-r") 'revert-buffer)
 
@@ -68,6 +68,21 @@
   (set-cursor-color "lime green")
 )
 (add-hook 'window-setup-hook 'post-load-stuff t)
+
+;flymake config for running pyflakes
+(when (load "flymake" t)
+  (defun flymake-pyflakes-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                       'flymake-create-temp-inplace))
+           (local-file (file-relative-name
+                        temp-file
+                        (file-name-directory buffer-file-name))))
+      (list "pyflakes" (list local-file))))
+
+  (add-to-list 'flymake-allowed-file-name-masks
+               '("\\.py\\'" flymake-pyflakes-init)))
+
+(add-hook 'find-file-hook 'flymake-find-file-hook)
 
 ;set up repos
 (require 'package)
