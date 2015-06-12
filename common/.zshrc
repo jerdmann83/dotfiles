@@ -8,8 +8,7 @@ precmd() {
     vcs_info
 }
 
-PROMPT='%{$fg_bold[green]%}%n@%m %{$fg_bold[blue]%}${vcs_info_msg_0_}%{$fg_bold[green]%}%~
-%1(j.%{$fg_bold[yellow]%}(%j%).)%{$fg_bold[green]%}>%{$reset_color%} '
+PROMPT='%{$fg_bold[blue]%}${vcs_info_msg_0_}%{$fg_bold[green]%}%1~ %1(j.%{$fg_bold[yellow]%}(%j%).)%{$fg_bold[green]%}>%{$reset_color%} '
 
 setopt histignorealldups
 setopt sharehistory
@@ -75,7 +74,7 @@ alias dev='cd ~/dev-root'
 alias dot='cd ~/.dotfiles'
 alias gvim='gvim --remote-silent'
 alias emacs='emacs -nw'
-alias ez="$EDITOR ~/.zshrc"
+alias ez="vim ~/.zshrc"
 alias sz='source ~/.zshrc'
 
 alias tnew='tmux new-session -s '
@@ -121,18 +120,18 @@ xbacklight -set 80 2>/dev/null || cat /dev/null
 
 # some function definitions
 function cbup {
-    knife cookbook --cookbook-path `git rev-parse --show-toplevel`/deploy/chef/cookbooks upload $1
+    knife cookbook --cookbook-path `git rev-parse --show-toplevel`/deploy/chef/cookbooks upload "$1"
 }
 
 function vpn {
-    sudo /home/jason/.juniper_networks/ncsvc -h us-ttvpn.tradingtechnologies.com -u jerdmann -p $1 -r "TT VPN" -f /home/jason/.juniper_networks/tt.cert
+    sudo /home/jason/.juniper_networks/ncsvc -h us-ttvpn.tradingtechnologies.com -u jerdmann -p "$1" -r "TT VPN" -f /home/jason/.juniper_networks/tt.cert
 }
 
 function external()
 {
     usage="external on|off"
     if [[ -z "$1" ]]; then
-        echo $usage
+        echo "$usage"
         return
     fi
 
@@ -158,6 +157,6 @@ function external()
         alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife'
         alias ttknife
     else
-        echo $usage
+        echo "$usage"
     fi
 }

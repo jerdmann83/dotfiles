@@ -57,7 +57,6 @@ endif
 set ignorecase
 set smartcase
 set incsearch
-set hlsearch
 
 set splitright
 set ruler
