@@ -63,6 +63,7 @@ alias egrep='egrep --color=auto'
 # some more aliases
 alias ll='ls -alF'
 alias vcloud='~/debesys-scripts/run ~/debesys-scripts/deploy/chef/scripts/vcloud_server.py'
+alias ec2='~/debesys-scripts/run ~/debesys-scripts/deploy/chef/scripts/ec2_instance.py'
 alias bump='~/debesys-scripts/run python ~/debesys-scripts/deploy/chef/scripts/bump_cookbook_version.py'
 alias deploy='~/debesys-scripts/run python ~/debesys-scripts/deploy/chef/scripts/request_deploy.py'
 alias deb='cd $(pwd | grep dev-root | cut -f1-5 -d\/) || echo "Not in a repo under dev-root."'
@@ -92,6 +93,9 @@ export VCD_ORG=Dev_General
 
 export AWS_DEFAULT_REGION='us-east-1'
 export JENKINS_USER='jason.erdmann@tradingtechnologies.com'
+
+# ec2 manager name
+export MGR="jerdmann"
 
 # ttnet project dirs
 alias cdspl='cd ~/ttnet/monitoring/splunk'
@@ -137,7 +141,7 @@ function external()
 
     if [[ "on" == "$1" ]]; then
         export PRE_EXTERNAL_PS1=$PS1
-        export PS1="%{$fg[red]%}[EXTERNAL DEBESYS] $PRE_EXTERNAL_PS1"
+        export PS1="%{$fg[red]%}[EXT] $PRE_EXTERNAL_PS1"
         alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife -C ~/.chef/knife.external.rb'
         alias ttknife
         echo

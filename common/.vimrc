@@ -1,16 +1,25 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'sjl/badwolf'
-Plugin 'kien/ctrlp.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'rking/ag.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-surround'
-call vundle#end()
+" Only do package stuff and nice colorscheme on my local machines.
+call system("test -f /etc/debian_version")
+if v:shell_error == 0
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+    Plugin 'gmarik/Vundle.vim'
+    Plugin 'sjl/badwolf'
+    Plugin 'kien/ctrlp.vim'
+    Plugin 'pangloss/vim-javascript'
+    Plugin 'rking/ag.vim'
+    Plugin 'scrooloose/nerdcommenter'
+    Plugin 'scrooloose/syntastic'
+    Plugin 'tpope/vim-surround'
+    call vundle#end()
+    colors badwolf
+    set cursorline
+else
+    " Ensure search hl is readable in the default theme.
+    hi Search ctermfg=0
+endif
 filetype plugin indent on
 
 set nobackup
@@ -47,16 +56,10 @@ set title
 set ttyfast
 set lazyredraw
 
-" Apply nice colorscheme just to my local machines.
-call system("test -f /etc/debian_version")
-if v:shell_error == 0
-    colors badwolf
-    set cursorline
-endif
-
 set ignorecase
 set smartcase
 set incsearch
+set hlsearch
 
 set splitright
 set ruler
