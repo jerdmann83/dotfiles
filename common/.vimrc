@@ -36,7 +36,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 let g:ag_prg="ag --column --nogroup --noheading --nobreak"
 
-let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_cursor_column = 0
 let g:syntastic_always_populate_loc_list = 1
