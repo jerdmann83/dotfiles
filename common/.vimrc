@@ -15,6 +15,7 @@ if v:shell_error == 0
     Plugin 'tpope/vim-surround'
     Plugin 'flazz/vim-colorschemes'
     call vundle#end()
+    set t_Co=256
     colors badwolf
     set cursorline
 else
@@ -22,6 +23,7 @@ else
     hi Search ctermfg=0
 endif
 filetype plugin indent on
+
 set autoindent
 set nobackup
 set expandtab
@@ -51,7 +53,6 @@ set shortmess=atI
 set autoread
 
 syntax on
-set t_Co=256
 set t_ut=
 set title
 set ttyfast
