@@ -13,6 +13,7 @@ if v:shell_error == 0
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'scrooloose/syntastic'
     Plugin 'tpope/vim-surround'
+    Plugin 'flazz/vim-colorschemes'
     call vundle#end()
     colors badwolf
     set cursorline
@@ -21,7 +22,7 @@ else
     hi Search ctermfg=0
 endif
 filetype plugin indent on
-
+set autoindent
 set nobackup
 set expandtab
 set smarttab
@@ -65,7 +66,9 @@ set splitright
 set ruler
 set showcmd
 set hidden
-set scrolloff=2
+set scrolloff=3
+set scrolljump=6
+set laststatus=2
 
 set wildmenu
 set wildmode=list:longest,full
