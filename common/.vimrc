@@ -17,7 +17,6 @@ if v:shell_error == 0
     call vundle#end()
     set t_Co=256
     colors badwolf
-    set cursorline
 else
     " Ensure search hl is readable in the default theme.
     hi Search ctermfg=0
