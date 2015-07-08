@@ -24,6 +24,7 @@ endif
 filetype plugin indent on
 
 set autoindent
+set autowrite
 set nobackup
 set expandtab
 set smarttab
@@ -62,6 +63,7 @@ set smartcase
 set incsearch
 set hlsearch
 
+set splitbelow
 set splitright
 set ruler
 set showcmd
