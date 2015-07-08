@@ -17,6 +17,7 @@ if v:shell_error == 0
     call vundle#end()
     set t_Co=256
     colors badwolf
+    set colorcolumn=+1
 else
     " Ensure search hl is readable in the default theme.
     hi Search ctermfg=0
@@ -34,7 +35,6 @@ set softtabstop=4
 set tabstop=4
 set shiftround
 set textwidth=100
-set colorcolumn=+1
 
 let g:ctrlp_by_filename = 1
 let g:ctrlp_working_path=0
@@ -42,7 +42,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 let g:ag_prg="ag --column --nogroup --noheading --nobreak"
 
-let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_cursor_column = 0
 let g:syntastic_always_populate_loc_list = 1
