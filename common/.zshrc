@@ -1,5 +1,5 @@
 # Set up the prompt
-export TERM=xterm
+export TERM=xterm-256color
 autoload -U colors && colors
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '%b '

@@ -20,6 +20,7 @@ if v:shell_error == 0
 else
     " Ensure search hl is readable in the default theme.
     hi Search ctermfg=0
+    set t_Co=8
 endif
 filetype plugin indent on
 
