@@ -33,6 +33,8 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set shiftround
+set textwidth=100
+set colorcolumn=+1
 
 let g:ctrlp_by_filename = 1
 let g:ctrlp_working_path=0
