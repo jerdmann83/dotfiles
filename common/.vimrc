@@ -6,6 +6,7 @@ if v:shell_error == 0
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
     Plugin 'gmarik/Vundle.vim'
+    Plugin 'davidhalter/jedi-vim'
     Plugin 'sjl/badwolf'
     Plugin 'kien/ctrlp.vim'
     Plugin 'pangloss/vim-javascript'
