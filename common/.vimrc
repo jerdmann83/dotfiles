@@ -82,6 +82,8 @@ set wildignore=*.swp,*.pyc
 
 set guioptions-=m
 set guioptions-=T
+set guioptions-=r
+set guioptions-=L
 
 set pastetoggle=<F2>
 imap kj <Esc>
