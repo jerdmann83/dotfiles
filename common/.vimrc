@@ -15,6 +15,7 @@ if v:shell_error == 0
     Plugin 'scrooloose/syntastic'
     Plugin 'tpope/vim-surround'
     Plugin 'flazz/vim-colorschemes'
+    Plugin 'Raimondi/delimitMate'
     call vundle#end()
     set t_Co=256
     colors badwolf
