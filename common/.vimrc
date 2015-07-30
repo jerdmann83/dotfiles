@@ -16,6 +16,8 @@ if v:shell_error == 0
     Plugin 'tpope/vim-surround'
     Plugin 'flazz/vim-colorschemes'
     Plugin 'Raimondi/delimitMate'
+    Plugin 'ervandew/supertab'
+    Plugin 'danielmiessler/VimBlog'
     call vundle#end()
     set t_Co=256
     colors badwolf
@@ -89,7 +91,10 @@ set guioptions-=L
 set pastetoggle=<F2>
 imap kj <Esc>
 
+" Trim trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+" Autosave html files for easier things.
+autocmd FocusLost *.html w
 
 let mapleader = ","
 nnoremap <leader>l :set invrelativenumber<cr>
