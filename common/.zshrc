@@ -124,7 +124,7 @@ xbacklight -set 80 2>/dev/null || cat /dev/null
 
 # some function definitions
 function cbup {
-    knife cookbook --cookbook-path `git rev-parse --show-toplevel`/deploy/chef/cookbooks upload "$1"
+    while true; do knife cookbook --cookbook-path `git rev-parse --show-toplevel`/deploy/chef/cookbooks upload "$1" && break; sleep .1; done
 }
 
 function vpn {
