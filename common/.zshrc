@@ -127,8 +127,10 @@ function cbup {
     knife cookbook --cookbook-path `git rev-parse --show-toplevel`/deploy/chef/cookbooks upload "$1"
 }
 
+# The strace below mysteriously gets the juniper vpn client to work.  Otherwise it bails when trying
+# to set routes?  Not sure what the deal is...
 function vpn {
-    sudo /home/jason/.juniper_networks/ncsvc -h us-ttvpn.tradingtechnologies.com -u jerdmann -p "$1" -r "TT VPN" -f /home/jason/.juniper_networks/tt.cert
+    sudo strace -f /home/jason/.juniper_networks/ncsvc -h us-ttvpn.tradingtechnologies.com -u jerdmann -p "$1" -r "TT VPN" -f /home/jason/.juniper_networks/tt.cert
 }
 
 function external()
