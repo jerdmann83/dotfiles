@@ -63,6 +63,7 @@ alias egrep='egrep --color=auto'
 # some more aliases
 alias ll='ls -alF'
 alias vcloud='~/debesys-scripts/run ~/debesys-scripts/deploy/chef/scripts/vcloud_server.py'
+alias newvm='~/debesys-scripts/run ~/debesys-scripts/deploy/chef/scripts/vcloud_server.py -a -s s --bootstrap'
 alias ec2='~/debesys-scripts/run ~/debesys-scripts/deploy/chef/scripts/ec2_instance.py'
 alias bump='~/debesys-scripts/run python ~/debesys-scripts/deploy/chef/scripts/bump_cookbook_version.py'
 alias deploy='~/debesys-scripts/run python ~/debesys-scripts/deploy/chef/scripts/request_deploy.py'
@@ -116,11 +117,15 @@ if [[ -f ~/.keys ]]; then
     . ~/.keys
 fi
 
+if [[ -f ~/.darwincfg ]]; then
+    . ~/.darwincfg
+fi
+
 # capslock is useless
 setxkbmap -option ctrl:nocaps 2>/dev/null
 
 # set brightness
-xbacklight -set 80 2>/dev/null || cat /dev/null
+xbacklight -set 90 2>/dev/null || cat /dev/null
 
 # some function definitions
 function cbup {
@@ -129,6 +134,10 @@ function cbup {
 
 function vpn {
     sudo /home/jason/.juniper_networks/ncsvc -h us-ttvpn.tradingtechnologies.com -u jerdmann -p "$1" -r "TT VPN" -f /home/jason/.juniper_networks/tt.cert
+}
+
+function makehome {
+    scp ~/.vimrc "$1":~ && scp -r ~/.vim "$1":~ && scp ~/.tmux.conf "$1":~
 }
 
 function external()
