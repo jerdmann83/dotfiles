@@ -1,31 +1,27 @@
 set nocompatible
 filetype off
-" Only do package stuff and nice colorscheme on my local machines.
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'sjl/badwolf'
+Plugin 'kien/ctrlp.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-surround'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'Raimondi/delimitMate'
+Plugin 'ervandew/supertab'
+Plugin 'danielmiessler/VimBlog'
+call vundle#end()
+set t_Co=256
+colors badwolf
+" colorcolumn is apparently not supported in the centos 6.4 vim
 call system("test -f /etc/debian_version")
 if v:shell_error == 0
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-    Plugin 'gmarik/Vundle.vim'
-    Plugin 'davidhalter/jedi-vim'
-    Plugin 'sjl/badwolf'
-    Plugin 'kien/ctrlp.vim'
-    Plugin 'pangloss/vim-javascript'
-    Plugin 'rking/ag.vim'
-    Plugin 'scrooloose/nerdcommenter'
-    Plugin 'scrooloose/syntastic'
-    Plugin 'tpope/vim-surround'
-    Plugin 'flazz/vim-colorschemes'
-    Plugin 'Raimondi/delimitMate'
-    Plugin 'ervandew/supertab'
-    Plugin 'danielmiessler/VimBlog'
-    call vundle#end()
-    set t_Co=256
-    colors badwolf
     set colorcolumn=+1
-else
-    " Ensure search hl is readable in the default theme.
-    hi Search ctermfg=0
-    set t_Co=8
 endif
 filetype plugin indent on
 
@@ -38,7 +34,6 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set shiftround
-set textwidth=100
 
 let g:ctrlp_by_filename = 1
 let g:ctrlp_working_path=0
@@ -95,6 +90,8 @@ imap kj <Esc>
 autocmd BufWritePre * :%s/\s\+$//e
 " Autosave html files for easier things.
 autocmd FocusLost *.html w
+
+autocmd Filetype python set textwidth=100
 
 let mapleader = ","
 nnoremap <leader>l :set invrelativenumber<cr>
