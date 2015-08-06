@@ -15,6 +15,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ervandew/supertab'
 Plugin 'danielmiessler/VimBlog'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 set t_Co=256
 colors badwolf

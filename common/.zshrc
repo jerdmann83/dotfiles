@@ -132,6 +132,13 @@ function cbup {
     while true; do knife cookbook --cookbook-path `git rev-parse --show-toplevel`/deploy/chef/cookbooks upload "$1" && break; sleep .1; done
 }
 
+function reporoot {
+    reporootdir=$(git rev-parse --show-toplevel)
+    if [[ $? -eq 0 ]]; then
+        cd $reporootdir
+    fi
+}
+
 function vpn {
     sudo /home/jason/.juniper_networks/ncsvc -h us-ttvpn.tradingtechnologies.com -u jerdmann -p "$1" -r "TT VPN" -f /home/jason/.juniper_networks/tt.cert
 }
