@@ -1,12 +1,19 @@
 [user]
-	name = Jason Erdmann
-	email = jason.erdmann@tradingtechnologies.com
-[push]
-	default = simple
+    name = Jason Erdmann
+    email = jerdmann83@gmail.com
 [alias]
-    glog = log --graph --date-order --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     br = branch
     co = checkout
-    cm = commit
+    cp = cherry-pick
     st = status
-    up = !git pull -q && git submodule -q init && git submodule -q update && git remote prune origin && git status
+    sm = submodule update --init 
+[push]
+    default = current
+[color]
+    ui = auto
+[core]
+    excludesfile = ~/.gitignore
+[gc]
+    auto = 0
+[merge]
+    tool = vimdiff

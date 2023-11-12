@@ -1,0 +1,18 @@
+# vim: set ft=shell
+export EDITOR='nvim'
+
+export GOPATH=/home/jason/gocode
+export PATH=~/.cargo/bin:/usr/local/go/bin:/opt/jdk/bin:$GOPATH/bin:$PATH
+
+for f in \
+    ~/.bash_aliases \
+    ~/.bash_functions \
+; do
+    test -r $f && source $f
+done
+
+export CDPATH="/home/jason/repos:/home/jason/repos/thesoulforge"
+
+# try keyboard settings, ignore failures
+setxkbmap -option ctrl:nocaps 2>/dev/null || :
+xset r rate 250 30 2>/dev/null || :

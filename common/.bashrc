@@ -12,42 +12,32 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-# append to the history file, don't overwrite it
+# various shell options
 shopt -s histappend
+shopt -s checkwinsize
+shopt -s globstar
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+HISTSIZE=10000
+HISTFILESIZE=10000
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set term type
-export TERM=xterm-256color
-
-# set prompt
-blue="\[\e[1;34m\]"
-green="\[\e[1;32m\]"
-red="\[\e[1;31m\]"
-reset="\[\e[0m\]"
-PROMPT_COMMAND=_prompt_command
-function _prompt_command()
+PROMPT_COMMAND=__ps1
+if [ -r ~/.git-prompt ]; then
+    source ~/.git-prompt
+else
+    function __git_ps1() { echo "" ; }
+fi
+function __ps1()
 {
-	local rc="$?"
-	PS1=""
-	if [ $rc != 0 ]; then
-		PS1+="$red[$rc]$reset"
-	fi
-	PS1+="$green\u@\h"
-	$(git branch >/dev/null 2>&1)
-	if [ $? == 0 ]; then
-		PS1+=" $blue(\$(git branch 2>/dev/null | grep '^*' | cut -f2 -d' '))"
-	fi
-	PS1+="$green \w$reset\r\n>"
+    local red='\[\e[1;31m\]'
+    local green='\[\e[1;32m\]'
+    local yellow='\[\e[1;33m\]'
+    local blue='\[\e[1;34m\]'
+    local reset='\[\e[0m\]'
+    PS1="${SSH_CLIENT:+$yellow$HOSTNAME }$blue$(__git_ps1 "%s ")$green\W > $reset"
     PS2="$blue>$reset"
 }
 
@@ -63,42 +53,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias fixdns='sudo resolvconf -u'
-alias sb='source ~/.bashrc'
-alias eb='vim ~/.bashrc'
-alias vcloud='~/debesys-scripts/run ~/debesys-scripts/deploy/chef/scripts/vcloud_server.py'
-alias bump='~/debesys-scripts/run python ~/debesys-scripts/deploy/chef/scripts/bump_cookbook_version.py'
-alias deploy='~/debesys-scripts/run python ~/debesys-scripts/deploy/chef/scripts/request_deploy.py'
-alias deb='cd $(pwd | grep dev-root | cut -f1-5 -d\/) || echo "Not in a repo under dev-root."'
-alias debone='cd ~/dev-root/debesys-one'
-alias debtwo='cd ~/dev-root/debesys-two'
-alias debthree='cd ~/dev-root/debesys-three'
-alias debs='cd ~/debesys-scripts'
-alias dev='cd ~/dev-root'
-alias dot='cd ~/.dotfiles'
-alias gvim='gvim --remote-silent'
-
-alias tnew='tmux new-session -s '
-alias tattach='tmux attach-session -t '
-alias tkill='tmux kill-session -t '
-alias tlist='tmux list-session'
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-if [ -f ~/.keys ]; then
-    . ~/.keys
-fi
-
-if [ -f ~/.bash_functions ]; then
-    . ~/.bash_functions
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -110,31 +64,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR="vim"
-
-# debesys stuff
-alias ttknife='`git rev-parse --show-toplevel`/run `git rev-parse --show-toplevel`/ttknife'
-alias run='`git rev-parse --show-toplevel`/run'
-alias gits='git-sync_'
-
-# vcd stuff
-export INTAD_USER=jerdmann
-export VCD_ORG=Dev_General
-
-export AWS_DEFAULT_REGION='us-east-1'
-export JENKINS_USER='jason.erdmann@tradingtechnologies.com'
-
-# ttnet project dirs
-alias cdspl='cd ~/ttnet/monitoring/splunk'
-alias cdici='cd ~/ttnet/monitoring/icinga'
-alias cdds='cd ~/ttnet/monitoring/scripts/centosDs'
-alias debone='cd ~/dev-root/debesys-one'
-alias debtwo='cd ~/dev-root/debesys-two'
-alias debthree='cd ~/dev-root/debesys-three'
-alias cb='cd `git rev-parse --show-toplevel`/deploy/chef/cookbooks'
-
-# capslock is useless
-setxkbmap -option ctrl:nocaps 2>/dev/null
-
-# set brightness
-xbacklight -set 90 2>/dev/null || cat /dev/null
+test -r ~/.shellrc && source ~/.shellrc
